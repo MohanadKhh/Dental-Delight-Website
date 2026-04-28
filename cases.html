@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Case Gallery - Before and after transformations across whitening, implants, and orthodontics." />
+  <title>Dental Delight | Cases</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-clinic-cream text-slate-800 antialiased font-sans">
+  <nav class="relative z-20 w-full border-b border-white/15 bg-clinic-cream backdrop-blur">
+    <div class="mx-auto flex w-full items-center justify-between px-4 py-2 sm:px-16">
+      <a href="index.html" aria-label="Go to home"
+        class="rounded-lg bg-clinic-cream/90 backdrop-blur transition hover:scale-101">
+
+        <img src="assets/images/logo.png" alt="Dental Delight logo" class="h-14 w-28 object-contain md:h-16 md:w-36">
+      </a>
+
+      <button data-menu-toggle type="button"
+        class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden">Menu</button>
+
+      <ul class="hidden items-center gap-2 lg:flex">
+        <li><a href="index.html"
+            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Home</a>
+        </li>
+        <li><a href="about.html"
+            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">About</a>
+        </li>
+        <li><a href="services.html"
+            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Services</a>
+        </li>
+        <li><a href="doctors.html"
+            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Doctor</a>
+        </li>
+        <li><a href="cases.html" class="rounded-md px-3 py-2 text-lg font-semibold text-clinic-bronze">Cases</a>
+        </li>
+      </ul>
+      <a href="index.html#contact"
+        class="hidden ml-2 rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex">Book
+        Now</a>
+
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-clinic-mist/40 bg-clinic-cream px-4 py-4 lg:hidden">
+      <div class="flex flex-col gap-2">
+        <a href="index.html"
+          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Home</a>
+        <a href="about.html"
+          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">About</a>
+        <a href="services.html"
+          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Services</a>
+        <a href="doctors.html"
+          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Doctor</a>
+        <a href="cases.html"
+          class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal">Cases</a>
+        <a href="index.html#contact"
+          class="mt-1 rounded-md bg-clinic-bronze px-3 py-2 text-center text-sm font-semibold text-white">Book
+          Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="relative overflow-hidden bg-slate-900 py-32 text-white">
+    <div class="absolute inset-0 bg-gradient-to-br from-clinic-teal/90 to-clinic-bronze/80 mix-blend-multiply"></div>
+    <div
+      class="absolute left-1/2 top-0 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 animate-float rounded-full bg-white/10 blur-[100px]"
+      style="animation-delay: 0.5s;"></div>
+
+    <div class="relative mx-auto w-full max-w-6xl px-4 text-center sm:px-6">
+      <p
+        class="mb-4 animate-fade-in inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm border border-white/20">
+        Real Results</p>
+      <h1 class="animate-slide-up text-5xl font-extrabold tracking-tight sm:text-6xl" style="animation-delay: 0.1s;">
+        Case <span class="text-transparent bg-clip-text bg-gradient-to-r from-clinic-cream to-white">Gallery</span></h1>
+      <p class="animate-slide-up mx-auto mt-6 max-w-2xl text-lg text-white/90 leading-relaxed"
+        style="animation-delay: 0.2s;">
+        Explore before and after transformations demonstrating our commitment to excellence in restorative and cosmetic
+        dentistry.
+      </p>
+    </div>
+  </header>
+
+  <section class="mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
+    <div class="mb-12 flex flex-wrap justify-center gap-3">
+      <button
+        class="filter-btn rounded-full bg-clinic-teal px-6 py-2.5 text-sm font-bold tracking-wide text-white transition-all shadow-md hover:shadow-lg"
+        data-filter="all">All Cases</button>
+      <button
+        class="filter-btn rounded-full border-2 border-slate-200 bg-white px-6 py-2.5 text-sm font-bold tracking-wide text-slate-600 transition-all hover:border-clinic-teal hover:text-clinic-teal"
+        data-filter="whitening">Whitening</button>
+      <button
+        class="filter-btn rounded-full border-2 border-slate-200 bg-white px-6 py-2.5 text-sm font-bold tracking-wide text-slate-600 transition-all hover:border-clinic-teal hover:text-clinic-teal"
+        data-filter="implants">Implants</button>
+      <button
+        class="filter-btn rounded-full border-2 border-slate-200 bg-white px-6 py-2.5 text-sm font-bold tracking-wide text-slate-600 transition-all hover:border-clinic-teal hover:text-clinic-teal"
+        data-filter="orthodontics">Orthodontics</button>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <article
+        class="case-item whitening group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/700/500?random=61" alt="Whitening case 1"
+            data-preview="https://picsum.photos/1400/900?random=61"
+            class="h-full w-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-clinic-teal/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+            <span
+              class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-bold uppercase tracking-wider text-clinic-teal shadow-lg">
+              <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              View Full
+            </span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div
+            class="mb-2 inline-block rounded-md bg-clinic-mist/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-clinic-teal">
+            Whitening</div>
+          <h3 class="text-lg font-bold text-slate-900">Whitening Case #1</h3>
+        </div>
+      </article>
+
+      <article
+        class="case-item implants group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/700/500?random=62" alt="Implant case 1"
+            data-preview="https://picsum.photos/1400/900?random=62"
+            class="h-full w-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-clinic-teal/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+            <span
+              class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-bold uppercase tracking-wider text-clinic-teal shadow-lg">
+              <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              View Full
+            </span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div
+            class="mb-2 inline-block rounded-md bg-clinic-mist/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-clinic-teal">
+            Implants</div>
+          <h3 class="text-lg font-bold text-slate-900">Implant Case #1</h3>
+        </div>
+      </article>
+
+      <article
+        class="case-item orthodontics group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/700/500?random=63" alt="Ortho case 1"
+            data-preview="https://picsum.photos/1400/900?random=63"
+            class="h-full w-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-clinic-teal/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+            <span
+              class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-bold uppercase tracking-wider text-clinic-teal shadow-lg">
+              <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              View Full
+            </span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div
+            class="mb-2 inline-block rounded-md bg-clinic-mist/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-clinic-teal">
+            Orthodontics</div>
+          <h3 class="text-lg font-bold text-slate-900">Orthodontic Case #1</h3>
+        </div>
+      </article>
+
+      <article
+        class="case-item whitening group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/700/500?random=64" alt="Whitening case 2"
+            data-preview="https://picsum.photos/1400/900?random=64"
+            class="h-full w-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-clinic-teal/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+            <span
+              class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-bold uppercase tracking-wider text-clinic-teal shadow-lg">
+              <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              View Full
+            </span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div
+            class="mb-2 inline-block rounded-md bg-clinic-mist/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-clinic-teal">
+            Whitening</div>
+          <h3 class="text-lg font-bold text-slate-900">Whitening Case #2</h3>
+        </div>
+      </article>
+
+      <article
+        class="case-item implants group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/700/500?random=65" alt="Implant case 2"
+            data-preview="https://picsum.photos/1400/900?random=65"
+            class="h-full w-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-clinic-teal/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+            <span
+              class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-bold uppercase tracking-wider text-clinic-teal shadow-lg">
+              <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              View Full
+            </span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div
+            class="mb-2 inline-block rounded-md bg-clinic-mist/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-clinic-teal">
+            Implants</div>
+          <h3 class="text-lg font-bold text-slate-900">Implant Case #2</h3>
+        </div>
+      </article>
+
+      <article
+        class="case-item orthodontics group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl">
+        <div class="relative aspect-[4/3] overflow-hidden">
+          <img src="https://picsum.photos/700/500?random=66" alt="Ortho case 2"
+            data-preview="https://picsum.photos/1400/900?random=66"
+            class="h-full w-full cursor-pointer object-cover transition-transform duration-500 group-hover:scale-110">
+          <div
+            class="pointer-events-none absolute inset-0 flex items-center justify-center bg-clinic-teal/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+            <span
+              class="inline-flex items-center rounded-full bg-white px-4 py-2 text-sm font-bold uppercase tracking-wider text-clinic-teal shadow-lg">
+              <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              View Full
+            </span>
+          </div>
+        </div>
+        <div class="p-6">
+          <div
+            class="mb-2 inline-block rounded-md bg-clinic-mist/20 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-clinic-teal">
+            Orthodontics</div>
+          <h3 class="text-lg font-bold text-slate-900">Orthodontic Case #2</h3>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div id="lightboxOverlay" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 p-4">
+    <div class="relative w-full max-w-5xl">
+      <button id="lightboxClose" type="button"
+        class="absolute right-3 top-3 rounded-md bg-white/90 px-3 py-1 text-xs font-bold text-clinic-teal">Close</button>
+      <img id="lightboxImage" class="h-auto max-h-[85vh] w-full rounded-xl object-contain"
+        src="https://picsum.photos/1400/900?random=99" alt="Case preview">
+    </div>
+  </div>
+
+  <footer class="bg-slate-900 py-10 border-t-4 border-clinic-teal mt-12">
+    <div class="mx-auto w-full max-w-6xl px-4 text-center">
+      <p class="text-sm text-slate-400">© 2026 Dental Delight. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="assets/js/cases.js"></script>
+</body>
+
+</html>

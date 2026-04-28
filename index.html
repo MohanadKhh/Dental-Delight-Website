@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dental Delight | Home</title>
+  <!-- <script src="assets/js/tailwind.config.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-clinic-cream text-slate-800 antialiased">
+  <header class="relative min-h-screen overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center"
+      style="background-image: linear-gradient(rgba(26,108,110,0.62), rgba(26,108,110,0.58)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80');">
+    </div>
+    <nav class="relative z-20 w-full border-b border-white/15 bg-clinic-cream backdrop-blur">
+      <div class="mx-auto flex w-full items-center justify-between px-4 py-2 sm:px-16">
+        <a href="index.html" aria-label="Go to home"
+          class="rounded-lg bg-clinic-cream/90 backdrop-blur transition hover:scale-101">
+
+          <img src="assets/images/logo.png" alt="Dental Delight logo" class="h-14 w-28 object-contain md:h-16 md:w-36">
+        </a>
+
+        <button data-menu-toggle type="button"
+          class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden">Menu</button>
+
+        <ul class="hidden items-center gap-2 lg:flex">
+          <li><a href="index.html" class="rounded-md px-3 py-2 text-lg font-semibold text-clinic-bronze">Home</a></li>
+          <li><a href="about.html"
+              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">About</a></li>
+          <li><a href="services.html"
+              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Services</a>
+          </li>
+          <li><a href="doctors.html"
+              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Doctor</a>
+          </li>
+          <li><a href="cases.html"
+              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Cases</a></li>
+        </ul>
+        <a href="#contact"
+          class="hidden ml-2 rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex">Book
+          Now</a>
+
+      </div>
+      <div id="mobileMenu" class="hidden border-t border-clinic-mist/40 bg-clinic-cream px-4 py-4 lg:hidden">
+        <div class="flex flex-col gap-2">
+          <a href="index.html"
+            class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal">Home</a>
+          <a href="about.html"
+            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">About</a>
+          <a href="services.html"
+            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Services</a>
+          <a href="doctors.html"
+            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Doctor</a>
+          <a href="cases.html"
+            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Cases</a>
+          <a href="#contact"
+            class="mt-1 rounded-md bg-clinic-bronze px-3 py-2 text-center text-sm font-semibold text-white">Book Now</a>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      class="relative mx-auto flex min-h-[calc(100vh-5.5rem)] w-full max-w-6xl items-center px-4 py-16 sm:px-6 lg:py-20">
+      <div class="max-w-2xl pt-8 text-white sm:pt-0">
+        <p
+          class="mb-4 inline-block rounded-full bg-clinic-gold/30 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em]">
+          Premium Dental Care</p>
+        <h1 class="text-4xl font-extrabold leading-tight sm:text-5xl">Where Healthy Smiles Begin</h1>
+        <p class="mt-5 text-base text-white/90 sm:text-lg">Modern dentistry with comfort, precision, and a patient-first
+          approach for all ages.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#contact"
+            class="rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold">Book
+            Now</a>
+          <a href="https://wa.me/201XXXXXXXXX?text=Hello%2C%20I%20want%20to%20book%20an%20appointment" target="_blank"
+            class="rounded-md border border-white/80 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-white hover:text-clinic-teal">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="counters" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
+    <div class="rounded-3xl bg-clinic-teal px-6 py-10 text-white shadow-lg sm:px-10 lg:px-12">
+      <div class="mx-auto max-w-3xl text-center">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Our Impact</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Trusted Results Across Every Smile</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-sm text-white/80 sm:text-base">
+          We track every milestone so patients can see the care, precision, and outcomes behind our treatment.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <article class="rounded-2xl bg-white/10 p-6 text-center backdrop-blur">
+          <p class="counter-number text-4xl font-extrabold sm:text-5xl" data-target="1240">0</p>
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75">Patients Treated</p>
+        </article>
+        <article class="rounded-2xl bg-white/10 p-6 text-center backdrop-blur">
+          <p class="counter-number text-4xl font-extrabold sm:text-5xl" data-target="980">0</p>
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75">Smiles Restored</p>
+        </article>
+        <article class="rounded-2xl bg-white/10 p-6 text-center backdrop-blur">
+          <p class="counter-number text-4xl font-extrabold sm:text-5xl" data-target="320">0</p>
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75">Implants Completed</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section id="about" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
+    <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80"
+        class="h-80 w-full rounded-2xl object-cover shadow-lg" alt="Clinic">
+        <div>
+        <h2 class="text-3xl font-extrabold text-clinic-teal">A trusted dental care destination</h2>
+        <p class="mt-4 text-slate-600">Dental Delight combines advanced technology and compassionate care to deliver
+          excellent outcomes in preventive, cosmetic, and restorative dentistry.</p>
+        <a href="about.html"
+          class="mt-6 inline-block rounded-md bg-clinic-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-mist hover:text-clinic-teal">Learn
+          More</a>
+      </div>
+    </div>
+  </section> -->
+
+  <section id="services" class="bg-white/70 py-16">
+    <div class="mx-auto w-full max-w-6xl px-4 sm:px-6">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold text-clinic-teal">Our Services</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-slate-600">Complete dental solutions designed for healthy, beautiful,
+          long-lasting smiles.</p>
+      </div>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl border border-clinic-mist/30 bg-clinic-cream p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-clinic-teal">General Checkups</h3>
+          <p class="mt-2 text-sm text-slate-600">Routine exams, diagnostics, and prevention plans.</p>
+        </article>
+        <article class="rounded-2xl border border-clinic-mist/30 bg-clinic-cream p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-clinic-teal">Orthodontics</h3>
+          <p class="mt-2 text-sm text-slate-600">Braces and aligners for functional alignment.</p>
+        </article>
+        <article class="rounded-2xl border border-clinic-mist/30 bg-clinic-cream p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-clinic-teal">Teeth Whitening</h3>
+          <p class="mt-2 text-sm text-slate-600">Safe procedures for brighter, confident smiles.</p>
+        </article>
+      </div>
+      <div class="text-center">
+        <a href="services.html"
+          class="mt-8 inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold">View
+          All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases" class="bg-white/70 py-16">
+    <div class="mx-auto w-full max-w-6xl px-4 sm:px-6">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold text-clinic-teal">Before and After Cases</h2>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        <figure class="overflow-hidden rounded-2xl border border-clinic-mist/40 bg-white shadow-sm">
+          <img src="https://picsum.photos/900/500?random=11" alt="Before case" class="h-64 w-full object-cover">
+          <figcaption class="px-4 py-3 text-sm font-semibold text-clinic-teal">Before</figcaption>
+        </figure>
+        <figure class="overflow-hidden rounded-2xl border border-clinic-mist/40 bg-white shadow-sm">
+          <img src="https://picsum.photos/900/500?random=12" alt="After case" class="h-64 w-full object-cover">
+          <figcaption class="px-4 py-3 text-sm font-semibold text-clinic-teal">After</figcaption>
+        </figure>
+      </div>
+      <div class="text-center">
+        <a href="cases.html"
+          class="mt-8 inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold">View
+          More Cases</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="doctors" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-clinic-teal">Our Doctor</h2>
+    </div>
+    <div class="mx-auto mt-10 max-w-md">
+      <a href="doctors.html" class="block hover:opacity-90 transition hover:scale-105 w-fit mx-auto">
+        <article class="overflow-hidden rounded-2xl border border-clinic-mist/30 bg-white shadow-sm">
+          <img src="./assets/images/Doctor-Photo.png" alt="Doctor" class="h-fit w-fit object-contain bg-clinic-cream">
+          <div class="p-5">
+            <h3 class="text-lg font-bold text-clinic-teal">Dr. Menna Abdallah</h3>
+            <p class="mt-1 text-sm text-slate-600">Lead Dentist</p>
+          </div>
+        </article>
+      </a>
+    </div>
+  </section>
+
+  <section id="testimonials" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-clinic-teal">Patient Testimonials</h2>
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-3">
+      <article class="rounded-2xl border border-clinic-mist/30 bg-white p-6 shadow-sm">
+        <p class="text-sm text-slate-600">"Excellent clinic and very professional team. My treatment was smooth and
+          pain-free."</p>
+        <p class="mt-3 text-sm font-bold text-clinic-teal">- Mariam A.</p>
+      </article>
+      <article class="rounded-2xl border border-clinic-mist/30 bg-white p-6 shadow-sm">
+        <p class="text-sm text-slate-600">"Amazing whitening results and very welcoming atmosphere."</p>
+        <p class="mt-3 text-sm font-bold text-clinic-teal">- Youssef H.</p>
+      </article>
+      <article class="rounded-2xl border border-clinic-mist/30 bg-white p-6 shadow-sm">
+        <p class="text-sm text-slate-600">"Highly recommended for implants and follow-up care."</p>
+        <p class="mt-3 text-sm font-bold text-clinic-teal">- Dina M.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-white/70 py-16">
+    <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-5">
+      <div class="lg:col-span-3">
+        <h2 class="text-3xl font-extrabold text-clinic-teal">Book an Appointment</h2>
+        <form id="contactForm" novalidate class="mt-6 space-y-4">
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-slate-700">Name</label>
+            <input id="name" type="text"
+              class="w-full rounded-md border border-clinic-mist/50 bg-white px-4 py-3 outline-none focus:border-clinic-teal">
+            <p class="mt-1 hidden text-xs font-semibold text-red-600">Please enter your name.</p>
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-slate-700">Phone</label>
+            <input id="phone" type="tel"
+              class="w-full rounded-md border border-clinic-mist/50 bg-white px-4 py-3 outline-none focus:border-clinic-teal">
+            <p class="mt-1 hidden text-xs font-semibold text-red-600">Enter a valid phone number.</p>
+          </div>
+          <div>
+            <label class="mb-1 block text-sm font-semibold text-slate-700">Age</label>
+            <input id="age" type="number"
+              class="w-full rounded-md border border-clinic-mist/50 bg-white px-4 py-3 outline-none focus:border-clinic-teal">
+            <p class="mt-1 hidden text-xs font-semibold text-red-600">Enter a valid age.</p>
+          </div>
+          <button
+            class="rounded-md bg-clinic-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-mist hover:text-clinic-teal"
+            type="submit">Submit</button>
+          <p id="formFeedback" class="text-sm font-semibold"></p>
+        </form>
+      </div>
+      <aside class="rounded-2xl border border-clinic-mist/40 bg-clinic-teal p-6 text-white lg:col-span-2">
+        <h3 class="text-lg font-bold">Phone</h3>
+        <p class="mt-2 text-sm text-white/90">+20 1XX XXX XXXX</p>
+        <h3 class="mt-6 text-lg font-bold">Working Hours</h3>
+        <p class="mt-2 text-sm text-white/90">Sat - Thu: 10:00 AM - 9:00 PM<br>Friday: Closed</p>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="bg-clinic-teal py-10 text-clinic-cream">
+    <div class="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3">
+      <div>
+        <h4 class="text-lg font-bold">Dental Delight</h4>
+        <p class="mt-2 text-sm text-clinic-cream/80">Modern dental care with a premium patient experience.</p>
+      </div>
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wide">Quick Links</h5>
+        <div class="mt-2 space-y-1 text-sm text-clinic-cream/80"><a href="about.html"
+            class="block hover:text-white">About</a><a href="services.html"
+            class="block hover:text-white">Services</a><a href="doctors.html"
+            class="block hover:text-white">Doctors</a><a href="cases.html" class="block hover:text-white">Cases</a>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wide">Contact</h5>
+        <p class="mt-2 text-sm text-clinic-cream/80">WhatsApp booking is available every day during clinic hours.</p>
+      </div>
+    </div>
+    <p class="mt-8 text-center text-xs text-clinic-cream/70">© 2026 Dental Delight. All rights reserved.</p>
+  </footer>
+
+  <a class="fixed bottom-5 right-5 rounded-full bg-green-500 px-4 py-3 text-xs font-bold uppercase tracking-wide text-white shadow-lg"
+    href="https://wa.me/201XXXXXXXXX?text=Hello%2C%20I%20want%20to%20book%20an%20appointment" target="_blank"
+    aria-label="WhatsApp">WhatsApp</a>
+
+  <script src="assets/js/index.js"></script>
+</body>
+
+</html>

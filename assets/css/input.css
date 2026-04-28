@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-clinic-teal: #1A6C6E;
+  --color-clinic-bronze: #AC7D25;
+  --color-clinic-cream: #F7F6F4;
+  --color-clinic-gold: #CBAD65;
+  --color-clinic-mist: #8DB1B0;
+  --font-sans: "Inter", sans-serif;
+}
