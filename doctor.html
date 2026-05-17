@@ -4,17 +4,31 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="Meet Our Doctors - Experienced specialists delivering evidence-based dental care." />
-    <title>Dental Delight | Doctors</title>
+    <title>Doctor Profile – Dental Delight</title>
+
+    <!-- ═══════════════════════════════════════════
+       CDN DEPENDENCIES  (see setup notes below)
+  ═══════════════════════════════════════════ -->
+    <!-- 1. Bootstrap 5.3 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- 2. AOS – Animate On Scroll -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- 3. Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="assets/js/tailwind.config.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/doctor.css">
 </head>
 
-<body class="bg-clinic-cream text-slate-800 antialiased font-sans">
+<body>
+
+    <!-- Navigation Bar -->
     <nav class="relative z-20 w-full border-b border-white/15 bg-clinic-cream backdrop-blur">
         <div class="mx-auto flex w-full items-center justify-between px-4 py-2 sm:px-16">
             <a href="index.html" aria-label="Go to home"
@@ -27,24 +41,14 @@
             <button data-menu-toggle type="button"
                 class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden">Menu</button>
 
-            <ul class="hidden items-center gap-2 lg:flex">
-                <li><a href="index.html"
-                        class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Home</a>
-                </li>
-                <li><a href="about.html"
-                        class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">About</a>
-                </li>
-                <li><a href="services.html"
-                        class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Services</a>
-                </li>
-                <li><a href="doctors.html"
-                        class="rounded-md px-3 py-2 text-lg font-semibold text-clinic-bronze">Doctor</a>
-                </li>
-                <li><a href="cases.html"
-                        class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Cases</a>
-                </li>
+            <ul class="site-nav hidden items-center gap-2 lg:flex">
+                <li><a href="index.html" class="rounded-md px-3 py-2 text-lg font-semibold">Home</a></li>
+                <li><a href="about.html" class="rounded-md px-3 py-2 text-lg font-semibold">About</a></li>
+                <li><a href="services.html" class="rounded-md px-3 py-2 text-lg font-semibold">Services</a></li>
+                <li><a href="doctor.html" class="rounded-md px-3 py-2 text-lg font-semibold is-active">Doctor</a></li>
+                <li><a href="cases.html" class="rounded-md px-3 py-2 text-lg font-semibold">Cases</a></li>
             </ul>
-            <a href="index.html#contact"
+            <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
                 class="hidden ml-2 rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex">Book
                 Now</a>
 
@@ -57,110 +61,246 @@
                     class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">About</a>
                 <a href="services.html"
                     class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Services</a>
-                <a href="doctors.html"
+                <a href="doctor.html"
                     class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal">Doctor</a>
                 <a href="cases.html"
                     class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Cases</a>
-                <a href="index.html#contact"
+                <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
                     class="mt-1 rounded-md bg-clinic-bronze px-3 py-2 text-center text-sm font-semibold text-white">Book
                     Now</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative overflow-hidden bg-slate-900 py-32 text-white">
-        <div class="absolute inset-0 bg-gradient-to-br from-clinic-mist/90 to-clinic-teal/80 mix-blend-multiply"></div>
-        <div class="absolute right-10 top-10 h-64 w-64 animate-float rounded-full bg-clinic-gold/10 blur-[80px]"></div>
 
-        <div class="relative mx-auto w-full max-w-6xl px-4 text-center sm:px-6">
-            <p
-                class="mb-4 animate-fade-in inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm border border-white/20">
-                The Experts</p>
-            <h1 class="animate-slide-up text-5xl font-extrabold tracking-tight sm:text-6xl"
-                style="animation-delay: 0.1s;">Meet Our <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-clinic-cream to-white">Doctors</span>
-            </h1>
-            <p class="animate-slide-up mx-auto mt-6 max-w-2xl text-lg text-white/90 leading-relaxed"
-                style="animation-delay: 0.2s;">
-                Experienced specialists delivering evidence-based dental care with a gentle touch.
-            </p>
-        </div>
-    </header>
+    <!-- ═══════════════════════════════════════════
+     LIGHTBOX (cert image preview)
+═══════════════════════════════════════════ -->
+    <div id="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview">
+        <span class="lb-close" onclick="closeLightbox()" title="Close">✕</span>
+        <img id="lb-img" src="" alt="Certificate">
+    </div>
 
-    <section class="mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
-        <div class="mx-auto max-w-lg">
-            <article
-                class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl hover:shadow-2xl hover:shadow-clinic-teal/10 transition-all duration-300">
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-10 pointer-events-none">
-                </div>
-                <div class="relative h-96 overflow-hidden">
-                    <img src="./assets/images/Doctor-Photo.png" alt="Dr Menna Abdallah"
-                        class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </div>
-                <div
-                    class="relative z-20 -mt-12 bg-white p-8 pt-10 rounded-t-3xl border-t border-slate-100 transition-transform duration-300 group-hover:-translate-y-4">
-                    <div
-                        class="absolute -top-5 right-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-clinic-gold to-clinic-bronze px-5 py-2 text-xs font-bold uppercase tracking-wider text-white shadow-lg">
-                        Lead Dentist</div>
 
-                    <h3 class="text-3xl font-bold text-slate-900 group-hover:text-clinic-teal transition-colors">Dr.
-                        Menna Abdallah</h3>
 
-                    <div class="mt-6 space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-clinic-mist/20 text-clinic-teal">
-                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Experience</p>
-                                <p class="font-medium text-slate-900">12+ Years</p>
-                            </div>
-                        </div>
+    <!-- ═══════════════════════════════════════════
+     DOCTOR PROFILE SECTION
+═══════════════════════════════════════════ -->
+    <section id="doctor-profile">
 
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-clinic-mist/20 text-clinic-teal">
-                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Certificates</p>
-                                <p class="font-medium text-slate-900">AACD Esthetic Program</p>
+        <!-- ambient blobs -->
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+
+        <!-- floating particles (JS-generated) -->
+        <div id="particles-host" aria-hidden="true"></div>
+
+        <div class="container position-relative" style="z-index:1;">
+
+            <!-- ── Section Header ── -->
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out-quart">
+                <span class="section-eyebrow">Meet Your Doctor</span>
+                <h2 class="section-title mt-2">Excellence in Every Smile</h2>
+                <div class="title-underline"></div>
+                <p class="section-desc mx-auto">
+                    Board-certified cosmetic dentist dedicated to crafting beautiful, lasting smiles through artistry,
+                    precision, and genuine care.
+                </p>
+            </div>
+
+            <!-- ── Main Two-Column ── -->
+            <div class="row g-5 align-items-start">
+
+                <!-- ════ LEFT: Doctor Image ════ -->
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900" data-aos-easing="ease-out-quart"
+                    data-aos-delay="100">
+
+                    <div class="doctor-sticky">
+                        <div class="img-outer">
+                            <!-- spinning gradient ring -->
+                            <div class="spin-ring"></div>
+                            <div class="spin-ring-gap"></div>
+
+                            <!-- Lead Dentist floating pill -->
+                            <span class="img-pill">✦ Lead Dentist</span>
+
+                            <!-- Main photo card -->
+                            <div class="img-card">
+                                <img src="./assets/images/Doctor-Photo.png"
+                                    alt="Dr. Menna Abdallah – Lead Cosmetic Dentist" loading="lazy">
+                                <div class="img-gradient-overlay"></div>
+                                <div class="img-name-badge">
+                                    <div class="dr-name">Dr. Menna Abdallah</div>
+                                    <div class="dr-role">Lead Cosmetic Dentist · Dental Delight Clinic</div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-clinic-mist/20 text-clinic-teal">
-                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                </svg>
+                        <!-- Stats chips -->
+                        <div class="row g-2 mt-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
+                            <div class="col-4">
+                                <div class="stat-chip">
+                                    <div class="val">12+</div>
+                                    <div class="lbl">Years Exp.</div>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Specialty</p>
-                                <p class="font-medium text-slate-900">Cosmetic Dentistry</p>
+                            <div class="col-4">
+                                <div class="stat-chip">
+                                    <div class="val">2,400+</div>
+                                    <div class="lbl">Smiles Done</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-chip">
+                                    <div class="val">98%</div>
+                                    <div class="lbl">Satisfaction</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </article>
-        </div>
+
+                </div><!-- /col left -->
+
+                <!-- ════ RIGHT: Bio + Certs ════ -->
+                <div class="col-lg-7 d-flex flex-column gap-4">
+
+                    <!-- Bio card -->
+                    <div class="bio-card" data-aos="fade-left" data-aos-duration="750" data-aos-delay="150"
+                        data-aos-easing="ease-out-quart">
+                        <h3>About Dr. Menna Abdallah</h3>
+                        <p>
+                            A graduate of <strong>Mansoura University – Faculty of Dentistry</strong> with over
+                            <strong>12 years</strong> of clinical excellence, Dr. Menna specialises in aesthetic smile
+                            makeovers, porcelain veneers, and full-mouth rehabilitations. Certified by the
+                            American Academy of Cosmetic Dentistry (AACD), she combines advanced techniques
+                            with a gentle, patient-first approach — because every smile tells a story.
+                        </p>
+                    </div>
+
+                    <!-- Certificates -->
+                    <div>
+                        <p class="certs-label" data-aos="fade-left" data-aos-duration="500" data-aos-delay="200">
+                            Qualifications &amp; Certifications
+                        </p>
+
+                        <div class="d-flex flex-column gap-3">
+
+                            <!-- CERT 1 – AACD -->
+                            <div class="cert-card" data-color="teal" data-aos="fade-left" data-aos-duration="650"
+                                data-aos-delay="250" data-aos-easing="ease-out-quart">
+                                <img class="cert-thumb" src="./assets/images/Certificates/Certificate2.png"
+                                    alt="AACD Esthetic Dentistry Program Certificate" onclick="openLightbox(this.src)"
+                                    title="Click to view full certificate">
+                                <div class="cert-info">
+                                    <div class="cert-title-text">AACD Esthetic Dentistry Program</div>
+                                    <div class="cert-org">American Academy of Cosmetic Dentistry</div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between w-100 mt-3">
+                                    <span class="cert-year-badge theme-teal">2021</span>
+                                    <div class="cert-check theme-teal">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                            <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CERT 2 – Doctor Certificate -->
+                            <div class="cert-card" data-color="blue" data-aos="fade-left" data-aos-duration="650"
+                                data-aos-delay="370" data-aos-easing="ease-out-quart">
+                                <img class="cert-thumb" src="./assets/images/Certificates/Certificate1.png"
+                                    alt="Doctor Certificate" onclick="openLightbox(this.src)"
+                                    title="Click to view full certificate">
+                                <div class="cert-info">
+                                    <div class="cert-title-text">Advanced Smile Design Certification</div>
+                                    <div class="cert-org">International Dental Institute</div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between w-100 mt-3">
+                                    <span class="cert-year-badge theme-blue">2022</span>
+                                    <div class="cert-check theme-blue">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                            <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CERT 3 – BDS Graduation -->
+                            <div class="cert-card" data-color="violet" data-aos="fade-left" data-aos-duration="650"
+                                data-aos-delay="490" data-aos-easing="ease-out-quart">
+                                <img class="cert-thumb" src="./assets/images/Certificates/Certificate3.jpg"
+                                    alt="BDS – Mansoura University Graduation Certificate"
+                                    onclick="openLightbox(this.src)" title="Click to view full certificate">
+                                <div class="cert-info">
+                                    <div class="cert-title-text">BDS – Bachelor of Dental Surgery</div>
+                                    <div class="cert-org">Mansoura University – Faculty of Dentistry · Class of 2019
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between w-100 mt-3">
+                                    <span class="cert-year-badge theme-violet">2019</span>
+                                    <div class="cert-check theme-violet">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                            <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- /cert list -->
+                    </div>
+
+                </div><!-- /col right -->
+            </div><!-- /row -->
+        </div><!-- /container -->
     </section>
 
-    <footer class="bg-slate-900 py-10 border-t-4 border-clinic-teal">
-        <div class="mx-auto w-full max-w-6xl px-4 text-center">
-            <p class="text-sm text-slate-400">© 2026 Dental Delight. All rights reserved.</p>
+
+    <footer class="bg-clinic-teal py-10 text-clinic-cream">
+        <div class="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3">
+            <div>
+                <h4 class="text-lg font-bold">Dental Delight</h4>
+                <p class="mt-2 text-sm text-clinic-cream/80">Modern dental care with a premium patient experience.</p>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold uppercase tracking-wide">Quick Links</h5>
+                <div class="mt-2 space-y-1 text-sm text-clinic-cream/80">
+                    <a href="about.html" class="block hover:text-white">About</a>
+                    <a href="services.html" class="block hover:text-white">Services</a>
+                    <a href="doctor.html" class="block hover:text-white">Doctor</a>
+                    <a href="cases.html" class="block hover:text-white">Cases</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-sm font-bold uppercase tracking-wide">Contact</h5>
+                <p class="mt-2 text-sm text-clinic-cream/80">WhatsApp booking is available every day during clinic
+                    hours.</p>
+            </div>
         </div>
+        <p class="mt-8 text-center text-xs text-clinic-cream/70">© 2026 Dental Delight. All rights reserved.</p>
     </footer>
-    <script src="assets/js/doctors.js"></script>
+
+    <a class="fixed bottom-5 right-5 flex items-center justify-center rounded-full bg-green-500 h-12 w-12 text-white shadow-lg hover:scale-110 transition"
+        href="https://wa.me/201093382358?text=Hello" target="_blank" aria-label="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+            <path fill="#25D366"
+                d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.7L0 32l8.5-2.2c2.2 1.2 4.7 1.9 7.5 1.9 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4z" />
+            <path fill="#FFF"
+                d="M24.3 19.6c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-1.9-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6.1-.2 0-.5-.1-.7-.1-.2-.9-2.2-1.3-3-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .4-.3.3-1.3 1.3-1.3 3.2 0 1.9 1.4 3.7 1.6 3.9.2.3 2.8 4.3 6.9 6 .9.4 1.6.6 2.2.7.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.7.3-.8.3-1.5.2-1.7-.1-.2-.4-.3-.8-.5z" />
+        </svg>
+    </a>
+
+
+    <!-- Bootstrap 5 JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Doctor scripts -->
+    <script src="assets/js/doctor.js"></script>
+
 </body>
 
 </html>

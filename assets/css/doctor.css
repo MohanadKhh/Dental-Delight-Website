@@ -1,0 +1,730 @@
+/* ─── TOKENS ─────────────────────────────── */
+:root {
+    --teal: #0d9488;
+    --teal-dark: #0f766e;
+    --teal-deeper: #134e4a;
+    --teal-light: #ccfbf1;
+    --teal-mist: #f0fdfa;
+    --gold: #b5893a;
+    --gold-light: #fef3c7;
+    --gold-border: #fcd34d;
+    --slate: #0f172a;
+    --slate-mid: #334155;
+    --slate-muted: #64748b;
+    --white: #ffffff;
+    --surface: #f8fafc;
+    --radius-card: 1.5rem;
+    --radius-img: 2rem;
+    --shadow-soft: 0 8px 32px rgba(13, 148, 136, 0.10), 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-lift: 0 20px 48px rgba(13, 148, 136, 0.18), 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── BASE ───────────────────────────────── */
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* Override Bootstrap link defaults to match index styles */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Doctor page nav colors (avoid Bootstrap overrides) */
+.site-nav a {
+    color: var(--color-slate-600);
+    transition: color 150ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+    color: var(--color-clinic-bronze);
+}
+
+/* ─── SECTION WRAPPER ────────────────────── */
+#doctor-profile {
+    background:
+        radial-gradient(ellipse 70% 50% at 10% 20%, rgba(13, 148, 136, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 90% 80%, rgba(13, 148, 136, 0.05) 0%, transparent 55%),
+        linear-gradient(160deg, #f8fafc 0%, #f0fdfa 50%, #f8fafc 100%);
+    position: relative;
+    /* must be visible so child `position: sticky` can use the viewport as intended */
+    overflow: visible;
+    padding: 3rem 0;
+}
+
+/* subtle tiled grid */
+#doctor-profile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(13, 148, 136, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13, 148, 136, 0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none;
+}
+
+/* ─── FLOATING BLOBS ─────────────────────── */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(1px);
+}
+
+.blob-1 {
+    width: 420px;
+    height: 420px;
+    top: -100px;
+    left: -120px;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, transparent 68%);
+    animation: blobDrift 9s ease-in-out infinite;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    bottom: -60px;
+    right: -80px;
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.09) 0%, transparent 68%);
+    animation: blobDrift 7s ease-in-out infinite reverse 1s;
+}
+
+.blob-3 {
+    width: 180px;
+    height: 180px;
+    top: 40%;
+    left: 50%;
+    background: radial-gradient(circle, rgba(181, 137, 58, 0.07) 0%, transparent 68%);
+    animation: blobDrift 11s ease-in-out infinite 2s;
+}
+
+@keyframes blobDrift {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(12px, -20px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-8px, 10px) scale(0.97);
+    }
+}
+
+/* ─── FLOATING PARTICLES ─────────────────── */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--teal);
+    opacity: 0;
+    pointer-events: none;
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.25;
+    }
+
+    90% {
+        opacity: 0.12;
+    }
+
+    100% {
+        transform: translateY(-120px) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* ─── SECTION HEADER ─────────────────────── */
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: rgba(13, 148, 136, 0.08);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 0.85rem;
+}
+
+.section-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: inline-block;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--slate);
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+}
+
+.section-desc {
+    font-size: 1rem;
+    color: var(--slate-muted);
+    line-height: 1.8;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.title-underline {
+    width: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--gold));
+    border-radius: 2px;
+    margin: 1rem auto 1.5rem;
+}
+
+/* ─── IMAGE COLUMN ───────────────────────── */
+.img-outer {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* rotating conic gradient ring */
+.spin-ring {
+    position: absolute;
+    inset: -7px;
+    border-radius: calc(var(--radius-img) + 0.5rem);
+    background: conic-gradient(from 0deg,
+            var(--teal) 0%,
+            var(--teal-dark) 25%,
+            var(--teal-deeper) 45%,
+            var(--teal-light) 70%,
+            var(--gold) 85%,
+            var(--teal) 100%);
+    animation: spinRing 14s linear infinite;
+    z-index: 0;
+}
+
+@keyframes spinRing {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* white separator between ring and image */
+.spin-ring-gap {
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius-img) + 0.1rem);
+    background: var(--surface);
+    z-index: 1;
+}
+
+/* image card */
+.img-card {
+    position: relative;
+    z-index: 2;
+    border-radius: var(--radius-img);
+    overflow: hidden;
+    box-shadow: var(--shadow-lift);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s;
+    cursor: default;
+}
+
+.img-card:hover {
+    transform: scale(1.025) translateY(-6px);
+    box-shadow: 0 36px 72px rgba(13, 148, 136, 0.22), 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.img-card img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    animation: imgFloat 7s ease-in-out infinite;
+}
+
+@keyframes imgFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.img-gradient-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.62) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+/* glassmorphism name badge inside image */
+.img-name-badge {
+    position: absolute;
+    bottom: 1.4rem;
+    left: 1.2rem;
+    right: 1.2rem;
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 0.85rem 1.1rem;
+}
+
+.img-name-badge .dr-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.img-name-badge .dr-role {
+    font-size: 0.76rem;
+    color: rgba(255, 255, 255, 0.78);
+    letter-spacing: 0.07em;
+    margin-top: 0.2rem;
+    text-transform: uppercase;
+}
+
+/* "Lead Dentist" pill floating top-right of image */
+.img-pill {
+    position: absolute;
+    top: 1.2rem;
+    right: -0.8rem;
+    z-index: 10;
+    background: linear-gradient(135deg, var(--gold), #d4a254);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(181, 137, 58, 0.35);
+    white-space: nowrap;
+}
+
+/* ─── STATS ROW ──────────────────────────── */
+.stat-chip {
+    background: #fff;
+    border: 1px solid rgba(13, 148, 136, 0.12);
+    border-radius: 1rem;
+    padding: 0.9rem 0.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.stat-chip:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(13, 148, 136, 0.16);
+}
+
+.stat-chip .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: var(--teal-dark);
+    line-height: 1;
+}
+
+.stat-chip .lbl {
+    font-size: 0.65rem;
+    color: var(--slate-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+}
+
+/* ─── BIO CARD ───────────────────────────── */
+.bio-card {
+    background: #fff;
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(13, 148, 136, 0.1);
+    border-left: 4px solid var(--teal);
+    padding: 1.6rem 1.6rem 1.6rem 1.8rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+}
+
+.bio-card::after {
+    content: '❝';
+    position: absolute;
+    top: -0.5rem;
+    right: 1.2rem;
+    font-size: 5rem;
+    color: rgba(13, 148, 136, 0.06);
+    font-family: 'Cormorant Garamond', serif;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.bio-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--slate);
+    margin-bottom: 0.65rem;
+}
+
+.bio-card p {
+    font-size: 0.9rem;
+    color: var(--slate-mid);
+    line-height: 1.85;
+    margin: 0;
+}
+
+/* ─── CERT LABEL ─────────────────────────── */
+.certs-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 0.9rem;
+}
+
+/* ─── CERTIFICATE CARDS ──────────────────── */
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.85rem;
+    background: #fff;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 1rem 1rem 1.25rem 1rem;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.05);
+    cursor: default;
+    transition:
+        transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.28s ease,
+        border-color 0.28s ease,
+        background 0.28s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* shimmer sweep on hover */
+.cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: left 0.5s ease;
+    pointer-events: none;
+}
+
+.cert-card:hover::before {
+    left: 160%;
+}
+
+/* colour themes per card, applied via data-color attr */
+.cert-card[data-color="teal"]:hover {
+    background: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+    border-color: #99f6e4;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08), 0 0 0 2px #99f6e4;
+    transform: translateY(-6px) scale(1.012);
+}
+
+.cert-card[data-color="blue"]:hover {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border-color: #93c5fd;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08), 0 0 0 2px #93c5fd;
+    transform: translateY(-6px) scale(1.012);
+}
+
+.cert-card[data-color="violet"]:hover {
+    background: linear-gradient(135deg, #faf5ff, #ede9fe);
+    border-color: #c4b5fd;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08), 0 0 0 2px #c4b5fd;
+    transform: translateY(-6px) scale(1.012);
+}
+
+.cert-icon-wrap {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.85rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    position: relative;
+}
+
+/* ─── CERTIFICATE IMAGE THUMBNAIL ────────── */
+.cert-thumb {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 0.9rem;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(13, 148, 136, 0.12);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.cert-card:hover .cert-thumb {
+    transform: translateY(-4px) scale(1.02);
+}
+
+.cert-info {
+    width: 100%;
+    min-width: 0;
+}
+
+.cert-title-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--slate);
+    line-height: 1.25;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: initial;
+}
+
+.cert-org {
+    font-size: 0.85rem;
+    color: var(--slate-muted);
+    margin-top: 0.25rem;
+}
+
+.cert-year-badge {
+    flex-shrink: 0;
+    padding: 0.28rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
+}
+
+.cert-check {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-check svg {
+    display: block;
+}
+
+/* colour tokens per theme */
+.theme-teal {
+    --c: #0f766e;
+    --bg: linear-gradient(135deg, #f0fdfa, #ccfbf1);
+    --bd: #99f6e4;
+}
+
+.theme-blue {
+    --c: #1d4ed8;
+    --bg: linear-gradient(135deg, #eff6ff, #dbeafe);
+    --bd: #93c5fd;
+}
+
+.theme-violet {
+    --c: #7c3aed;
+    --bg: linear-gradient(135deg, #faf5ff, #ede9fe);
+    --bd: #c4b5fd;
+}
+
+.cert-year-badge.theme-teal {
+    background: var(--bg);
+    border: 1px solid var(--bd);
+    color: var(--c);
+}
+
+.cert-year-badge.theme-blue {
+    background: var(--bg);
+    border: 1px solid var(--bd);
+    color: var(--c);
+}
+
+.cert-year-badge.theme-violet {
+    background: var(--bg);
+    border: 1px solid var(--bd);
+    color: var(--c);
+}
+
+.cert-icon-wrap.theme-teal {
+    background: var(--bg);
+    border: 1.5px solid var(--bd);
+}
+
+.cert-icon-wrap.theme-blue {
+    background: var(--bg);
+    border: 1.5px solid var(--bd);
+}
+
+.cert-icon-wrap.theme-violet {
+    background: var(--bg);
+    border: 1.5px solid var(--bd);
+}
+
+.cert-check.theme-teal {
+    background: #0f766e;
+}
+
+.cert-check.theme-blue {
+    background: #1d4ed8;
+}
+
+.cert-check.theme-violet {
+    background: #7c3aed;
+}
+
+/* ─── CERT IMAGE LIGHTBOX ────────────────── */
+#cert-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#cert-lightbox.active {
+    display: flex;
+}
+
+#cert-lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 1.2rem;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+    animation: lbIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes lbIn {
+    from {
+        opacity: 0;
+        transform: scale(0.88);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#cert-lightbox .lb-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#cert-lightbox .lb-close:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* ─── SPECIALTY TAGS ─────────────────────── */
+.spec-tag {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    background: rgba(13, 148, 136, 0.08);
+    color: var(--teal-dark);
+    border: 1px solid rgba(13, 148, 136, 0.2);
+    transition: background 0.22s ease, color 0.22s ease, transform 0.22s ease;
+    cursor: default;
+}
+
+.spec-tag:hover {
+    background: var(--teal-dark);
+    color: #fff;
+    transform: scale(1.06);
+}
+
+/* ─── RESPONSIVE ─────────────────────────── */
+@media (max-width: 991.98px) {
+    #doctor-profile {
+        padding: 4rem 0;
+    }
+
+    .img-pill {
+        right: 0.4rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .cert-title-text {
+        font-size: 0.88rem;
+    }
+}
+
+/* ─── STICKY DOCTOR IMAGE (desktop) ───────────────── */
+@media (min-width: 992px) {
+    /* Ensure the left column can stick while the right column scrolls. */
+    .col-lg-5 {
+        align-self: flex-start;
+    }
+
+    /* Keep the image+stats block fixed while the right column scrolls.
+       It will naturally unstick when the left column ends (after last certificate). */
+    .doctor-sticky {
+        position: sticky;
+        top: 96px; /* offset under the navbar */
+        z-index: 3;
+    }
+
+    /* Ensure particle/spin layers still render correctly when sticky */
+    .doctor-sticky .spin-ring,
+    .doctor-sticky .spin-ring-gap,
+    .doctor-sticky .img-pill {
+        will-change: transform;
+    }
+}

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source "../**/*.html";
 
 @theme {
   --color-clinic-teal: #1A6C6E;
