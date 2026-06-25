@@ -363,4 +363,189 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderReviews();
   startAutoSlide();
+
+  // ─── CASES SLIDER ────────────────────────
+  const casesData = [
+    {
+      img: "./assets/images/Cases/Case1.jpeg",
+      alt: "Whitening case 1",
+      categoryKey: "cases.labels.whitening",
+      titleKey: "cases.items.whitening1"
+    },
+    {
+      img: "./assets/images/Cases/Case2.webp",
+      alt: "Implant case 1",
+      categoryKey: "cases.labels.implants",
+      titleKey: "cases.items.implants1"
+    },
+    {
+      img: "./assets/images/Cases/Case3.webp",
+      alt: "Ortho case 1",
+      categoryKey: "cases.labels.orthodontics",
+      titleKey: "cases.items.orthodontics1"
+    },
+    {
+      img: "./assets/images/Cases/Case4.webp",
+      alt: "Whitening case 2",
+      categoryKey: "cases.labels.whitening",
+      titleKey: "cases.items.whitening2"
+    },
+    {
+      img: "./assets/images/Cases/Case5.webp",
+      alt: "Implant case 2",
+      categoryKey: "cases.labels.implants",
+      titleKey: "cases.items.implants2"
+    },
+    {
+      img: "./assets/images/Cases/Case6.webp",
+      alt: "Ortho case 2",
+      categoryKey: "cases.labels.orthodontics",
+      titleKey: "cases.items.orthodontics2"
+    }
+  ];
+
+  let currentCaseIndex = 0;
+  const totalCases = casesData.length;
+
+  const getVisibleCasesCount = () => {
+    if (window.innerWidth >= 1024) return 3; // lg
+    if (window.innerWidth >= 768) return 2;  // md
+    return 1; // sm
+  };
+
+  const renderCases = () => {
+    const slider = document.getElementById("casesSlider");
+    if (!slider) return;
+
+    slider.innerHTML = "";
+
+    const buildCaseCard = (item) => {
+      const cardDiv = document.createElement("div");
+      cardDiv.className = "case-slide";
+
+      cardDiv.innerHTML = `
+        <article class="case-card group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:shadow-xl mx-auto h-full flex flex-col">
+          <div class="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <img src="${item.img}" alt="${item.alt}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+          <div class="mt-4 text-center flex-grow flex flex-col justify-between">
+            <div>
+              <div class="mb-1.5 inline-block rounded-md bg-clinic-mist/20 px-2 py-0.5 text-[0.7rem] font-semibold uppercase tracking-wider text-clinic-teal">
+                <span data-i18n="${item.categoryKey}"></span>
+              </div>
+              <h3 class="font-['Cormorant_Garamond',serif] text-lg font-bold text-slate-900 leading-snug" data-i18n="${item.titleKey}"></h3>
+            </div>
+          </div>
+        </article>
+      `;
+      return cardDiv;
+    };
+
+    casesData.forEach((item) => {
+      slider.appendChild(buildCaseCard(item));
+    });
+
+    currentCaseIndex = 0;
+    updateCaseSliderPosition(false);
+
+    // Request the translation script to apply translations to newly added data-i18n nodes
+    if (window.i18n && typeof window.i18n.setLanguage === "function") {
+      const activeLang = window.i18n.getLocale();
+      window.i18n.setLanguage(activeLang);
+    }
+  };
+
+  const goToCase = (index) => {
+    if (totalCases === 0) return;
+    currentCaseIndex = index;
+    updateCaseSliderPosition();
+  };
+
+  const renderCaseDots = () => {
+    const dotsContainer = document.getElementById("casesSliderDots");
+    if (!dotsContainer) return;
+
+    dotsContainer.innerHTML = "";
+    const visibleCount = getVisibleCasesCount();
+    const dotsCount = Math.max(1, totalCases - visibleCount + 1);
+
+    for (let i = 0; i < dotsCount; i++) {
+      const dot = document.createElement("button");
+      dot.className = `h-2 rounded-full transition ${i === currentCaseIndex ? 'bg-clinic-teal w-6' : 'bg-clinic-mist w-2'}`;
+      dot.addEventListener("click", () => goToCase(i));
+      dotsContainer.appendChild(dot);
+    }
+  };
+
+  const updateCaseSliderPosition = (withTransition = true) => {
+    const slider = document.getElementById("casesSlider");
+    if (!slider) return;
+
+    const visibleCount = getVisibleCasesCount();
+    const maxIndex = Math.max(0, totalCases - visibleCount);
+
+    if (currentCaseIndex > maxIndex) {
+      currentCaseIndex = maxIndex;
+    }
+    if (currentCaseIndex < 0) currentCaseIndex = 0;
+
+    slider.style.transition = withTransition ? "transform 500ms ease-out" : "none";
+    const offset = -currentCaseIndex * (100 / visibleCount);
+    slider.style.transform = `translateX(${offset}%)`;
+
+    renderCaseDots();
+    updateCaseNavButtons();
+  };
+
+  const updateCaseNavButtons = () => {
+    const prevButton = document.getElementById("prevCase");
+    const nextButton = document.getElementById("nextCase");
+    if (!prevButton || !nextButton) return;
+
+    const visibleCount = getVisibleCasesCount();
+    const maxIndex = Math.max(0, totalCases - visibleCount);
+
+    const atStart = currentCaseIndex <= 0;
+    const atEnd = currentCaseIndex >= maxIndex;
+
+    prevButton.disabled = atStart;
+    nextButton.disabled = atEnd;
+    prevButton.classList.toggle("is-disabled", atStart);
+    nextButton.classList.toggle("is-disabled", atEnd);
+  };
+
+  const nextCase = () => {
+    if (totalCases === 0) return;
+    const visibleCount = getVisibleCasesCount();
+    const maxIndex = Math.max(0, totalCases - visibleCount);
+
+    if (currentCaseIndex >= maxIndex) {
+      currentCaseIndex = 0;
+    } else {
+      currentCaseIndex += 1;
+    }
+    updateCaseSliderPosition();
+  };
+
+  const prevCase = () => {
+    if (totalCases === 0) return;
+    const visibleCount = getVisibleCasesCount();
+    const maxIndex = Math.max(0, totalCases - visibleCount);
+
+    if (currentCaseIndex <= 0) {
+      currentCaseIndex = maxIndex;
+    } else {
+      currentCaseIndex -= 1;
+    }
+    updateCaseSliderPosition();
+  };
+
+  document.getElementById("nextCase")?.addEventListener("click", nextCase);
+  document.getElementById("prevCase")?.addEventListener("click", prevCase);
+
+  window.addEventListener("resize", () => {
+    updateCaseSliderPosition(false);
+  });
+
+  renderCases();
 });

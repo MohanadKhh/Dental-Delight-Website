@@ -11,12 +11,15 @@
   <meta name="keywords"
     content="dental delight, dental clinic, dental suez clinic, dentist in suez, dental clinic suez, cosmetic dentistry suez, teeth whitening, dental implants, Dr. Menna Abdallah" />
   <link rel="canonical" href="https://dentaldelightsuez.com/" />
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dentaldelightsuez.com/" />
-  <meta property="og:title" content="Dental Delight | Best Dental Clinic in Suez City, Egypt" data-i18n="meta.index.title" data-i18n-attr="content" />
-  <meta property="og:description" content="Dental Delight is a premium dental clinic in Suez City, Egypt. Specialist dentist Dr. Menna Abdallah offers dental implants, cosmetic dentistry, veneers, whitening, and teeth cleaning." data-i18n="meta.index.description" data-i18n-attr="content" />
+  <meta property="og:title" content="Dental Delight | Best Dental Clinic in Suez City, Egypt"
+    data-i18n="meta.index.title" data-i18n-attr="content" />
+  <meta property="og:description"
+    content="Dental Delight is a premium dental clinic in Suez City, Egypt. Specialist dentist Dr. Menna Abdallah offers dental implants, cosmetic dentistry, veneers, whitening, and teeth cleaning."
+    data-i18n="meta.index.description" data-i18n-attr="content" />
   <meta property="og:image" content="https://dentaldelightsuez.com/assets/images/logo.png" />
   <meta property="og:image:alt" content="Dental Delight Clinic Logo" />
   <meta property="og:site_name" content="Dental Delight" />
@@ -24,8 +27,11 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://dentaldelightsuez.com/" />
-  <meta name="twitter:title" content="Dental Delight | Best Dental Clinic in Suez City, Egypt" data-i18n="meta.index.title" data-i18n-attr="content" />
-  <meta name="twitter:description" content="Dental Delight is a premium dental clinic in Suez City, Egypt. Specialist dentist Dr. Menna Abdallah offers dental implants, cosmetic dentistry, veneers, whitening, and teeth cleaning." data-i18n="meta.index.description" data-i18n-attr="content" />
+  <meta name="twitter:title" content="Dental Delight | Best Dental Clinic in Suez City, Egypt"
+    data-i18n="meta.index.title" data-i18n-attr="content" />
+  <meta name="twitter:description"
+    content="Dental Delight is a premium dental clinic in Suez City, Egypt. Specialist dentist Dr. Menna Abdallah offers dental implants, cosmetic dentistry, veneers, whitening, and teeth cleaning."
+    data-i18n="meta.index.description" data-i18n-attr="content" />
   <meta name="twitter:image" content="https://dentaldelightsuez.com/assets/images/logo.png" />
 
   <link rel="icon" type="image/png" href="assets/images/TapLogo.png" />
@@ -85,6 +91,23 @@
     "url": "https://dentaldelightsuez.com/"
   }
   </script>
+  <style>
+    .case-slide {
+      width: 100%;
+      flex-shrink: 0;
+      padding: 0 8px;
+    }
+    @media (min-width: 768px) {
+      .case-slide {
+        width: 50%;
+      }
+    }
+    @media (min-width: 1024px) {
+      .case-slide {
+        width: 33.3333%;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-clinic-cream text-slate-800 antialiased">
@@ -337,24 +360,50 @@
 
   <section id="cases" class="bg-white/70 py-16">
     <div class="mx-auto w-full max-w-6xl px-4 sm:px-6">
-      <div class="text-center">
+      <div class="text-center mb-10">
         <h2 class="text-3xl font-extrabold text-clinic-teal" data-i18n="index.cases.title">Before and After Cases</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-slate-600" data-i18n="index.cases.subtitle">Explore real patient
+          transformations showing our commitment to excellence.</p>
       </div>
-      <div class="mt-10 grid gap-5 md:grid-cols-2">
-        <figure class="overflow-hidden rounded-2xl border border-clinic-mist/40 bg-white shadow-sm">
-          <img src="https://picsum.photos/900/500?random=11" alt="Before case" class="h-64 w-full object-cover">
-          <figcaption class="px-4 py-3 text-sm font-semibold text-clinic-teal" data-i18n="index.cases.before">Before
-          </figcaption>
-        </figure>
-        <figure class="overflow-hidden rounded-2xl border border-clinic-mist/40 bg-white shadow-sm">
-          <img src="https://picsum.photos/900/500?random=12" alt="After case" class="h-64 w-full object-cover">
-          <figcaption class="px-4 py-3 text-sm font-semibold text-clinic-teal" data-i18n="index.cases.after">After
-          </figcaption>
-        </figure>
+
+      <div class="relative mt-10">
+        <div class="cases-slider-container overflow-hidden mx-auto max-w-5xl">
+          <div id="casesSlider" class="flex transition-transform duration-500 ease-out">
+            <!-- Cases loaded dynamically by JS -->
+          </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
+          <!-- Dots Container -->
+          <div id="casesSliderDots"
+            class="order-1 flex flex-wrap justify-center gap-2 max-w-full px-4 sm:order-2 sm:max-w-none">
+            <!-- Dots generated by JS -->
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="order-2 flex items-center justify-center gap-4 sm:order-1 sm:contents">
+            <button id="prevCase"
+              class="rounded-full border border-clinic-teal p-2 text-clinic-teal hover:bg-clinic-teal hover:text-white transition sm:order-1 disabled:opacity-30 disabled:pointer-events-none"
+              aria-label="Previous case">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button id="nextCase"
+              class="rounded-full border border-clinic-teal p-2 text-clinic-teal hover:bg-clinic-teal hover:text-white transition sm:order-3 disabled:opacity-30 disabled:pointer-events-none"
+              aria-label="Next case">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
-      <div class="text-center">
+
+      <div class="text-center mt-10">
         <a href="cases.html"
-          class="mt-8 inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold"
+          class="inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold"
           data-i18n="index.cases.cta">View More Cases</a>
       </div>
     </div>
