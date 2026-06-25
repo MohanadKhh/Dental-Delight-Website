@@ -4,10 +4,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dental Delight | Home</title>
-  <!-- <script src="assets/js/tailwind.config.js"></script> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  <title data-i18n="meta.index.title">Dental Delight | Dental Suez Clinic & Dentist</title>
+  <meta name="description"
+    content="Dental Delight is a premium dental clinic in Suez offering professional dental care, cosmetic dentistry, whitening, implants, and teeth cleaning."
+    data-i18n="meta.index.description" data-i18n-attr="content" />
+  <meta name="keywords"
+    content="dental delight, dental clinic, dental suez clinic, dentist in suez, dental clinic suez, cosmetic dentistry suez, teeth whitening, dental implants, Dr. Menna Abdallah" />
+  <link rel="icon" type="image/png" href="assets/images/TapLogo.png" />
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/doctor.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Dental Delight Clinic",
+    "image": "https://dentaldelightsuez.com/assets/images/logo.png",
+    "@id": "https://dentaldelightsuez.com/#dentist",
+    "url": "https://dentaldelightsuez.com",
+    "telephone": "+201093382358",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Suez",
+      "addressCountry": "EG"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 31.0427846,
+      "longitude": 31.3934376
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "opens": "10:00",
+      "closes": "21:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/Dntl.Delight",
+      "https://www.instagram.com/dental.delight.center",
+      "https://www.tiktok.com/@dental.delight.center"
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-clinic-cream text-slate-800 antialiased">
@@ -17,47 +62,64 @@
     </div>
     <nav class="relative z-20 w-full border-b border-white/15 bg-clinic-cream backdrop-blur">
       <div class="mx-auto flex w-full items-center justify-between px-4 py-2 sm:px-16">
-        <a href="index.html" aria-label="Go to home"
-          class="rounded-lg bg-clinic-cream/90 backdrop-blur transition hover:scale-101">
+        <a href="index.html" class="rounded-lg bg-clinic-cream/90 backdrop-blur transition hover:scale-101">
 
-          <img src="assets/images/logo.png" alt="Dental Delight logo" class="h-14 w-28 object-contain md:h-16 md:w-36">
+          <img src="assets/images/logo.png" alt="Dental Delight logo" data-i18n="nav.logoAlt" data-i18n-attr="alt"
+            class="h-14 w-28 object-contain md:h-16 md:w-36">
         </a>
 
         <button data-menu-toggle type="button"
-          class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden">Menu</button>
+          class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden"
+          data-i18n="nav.menu">Menu</button>
 
         <ul class="hidden items-center gap-2 lg:flex">
-          <li><a href="index.html" class="rounded-md px-3 py-2 text-lg font-semibold text-clinic-bronze">Home</a></li>
+          <li><a href="index.html" class="rounded-md px-3 py-2 text-lg font-semibold text-clinic-bronze"
+              data-i18n="nav.home">Home</a></li>
           <li><a href="about.html"
-              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">About</a></li>
+              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+              data-i18n="nav.about">About</a></li>
           <li><a href="services.html"
-              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Services</a>
+              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+              data-i18n="nav.services">Services</a>
           </li>
           <li><a href="doctor.html"
-              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Doctor</a>
+              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+              data-i18n="nav.doctor">Doctor</a>
           </li>
           <li><a href="cases.html"
-              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Cases</a></li>
+              class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+              data-i18n="nav.cases">Cases</a></li>
         </ul>
-        <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
-          class="hidden ml-2 rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex">Book
-          Now</a>
+        <div class="hidden items-center gap-2 lg:flex">
+          <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
+            class="rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex"
+            data-i18n="nav.bookNow">Book Now</a>
+          <button type="button"
+            class="rounded-md border border-clinic-teal px-3 py-2 text-xs font-semibold text-clinic-teal"
+            data-i18n-toggle aria-label="Switch language">AR</button>
+        </div>
 
       </div>
       <div id="mobileMenu" class="hidden border-t border-clinic-mist/40 bg-clinic-cream px-4 py-4 lg:hidden">
         <div class="flex flex-col gap-2">
-          <a href="index.html"
-            class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal">Home</a>
-          <a href="about.html"
-            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">About</a>
+          <a href="index.html" class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal"
+            data-i18n="nav.home">Home</a>
+          <a href="about.html" class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+            data-i18n="nav.about">About</a>
           <a href="services.html"
-            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Services</a>
+            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+            data-i18n="nav.services">Services</a>
           <a href="doctor.html"
-            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Doctor</a>
-          <a href="cases.html"
-            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Cases</a>
+            class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+            data-i18n="nav.doctor">Doctor</a>
+          <a href="cases.html" class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+            data-i18n="nav.cases">Cases</a>
           <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
-            class="mt-1 rounded-md bg-clinic-bronze px-3 py-2 text-center text-sm font-semibold text-white">Book Now</a>
+            class="mt-1 rounded-md bg-clinic-bronze px-3 py-2 text-center text-sm font-semibold text-white"
+            data-i18n="nav.bookNow">Book Now</a>
+          <button type="button"
+            class="mt-1 rounded-md border border-clinic-teal px-3 py-2 text-center text-sm font-semibold text-clinic-teal"
+            data-i18n-toggle aria-label="Switch language">AR</button>
         </div>
       </div>
     </nav>
@@ -65,18 +127,20 @@
     <div
       class="relative mx-auto flex min-h-[calc(100vh-5.5rem)] w-full max-w-6xl items-center px-4 py-16 sm:px-6 lg:py-20">
       <div class="max-w-2xl pt-8 text-white sm:pt-0">
-        <p
-          class="mb-4 inline-block rounded-full bg-clinic-gold/30 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em]">
-          Premium Dental Care</p>
-        <h1 class="text-4xl font-extrabold leading-tight sm:text-5xl">Where Healthy Smiles Begin</h1>
-        <p class="mt-5 text-base text-white/90 sm:text-lg">Modern dentistry with comfort, precision, and a patient-first
-          approach for all ages.</p>
+        <p class="mb-4 inline-block rounded-full bg-clinic-gold/30 px-4 py-1 text-xs font-bold uppercase tracking-[0.2em]"
+          data-i18n="index.hero.eyebrow">Premium Dental Care</p>
+        <h1 class="text-4xl font-extrabold leading-tight sm:text-5xl" data-i18n="index.hero.title">Where Healthy Smiles
+          Begin</h1>
+        <p class="mt-5 text-base text-white/90 sm:text-lg" data-i18n="index.hero.subtitle">Modern dentistry with
+          comfort,
+          precision, and a patient-first approach for all ages.</p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
-            class="rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold">Book
-            Now</a>
+            class="rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold"
+            data-i18n="index.hero.bookNow">Book Now</a>
           <a href="https://wa.me/201XXXXXXXXX?text=Hello%2C%20I%20want%20to%20book%20an%20appointment" target="_blank"
-            class="rounded-md border border-white/80 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-white hover:text-clinic-teal">WhatsApp</a>
+            class="rounded-md border border-white/80 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-white hover:text-clinic-teal"
+            data-i18n="index.hero.whatsapp">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -85,9 +149,11 @@
   <section id="counters" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
     <div class="rounded-3xl bg-clinic-teal px-6 py-10 text-white shadow-lg sm:px-10 lg:px-12">
       <div class="mx-auto max-w-3xl text-center">
-        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Our Impact</p>
-        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Trusted Results Across Every Smile</h2>
-        <p class="mx-auto mt-4 max-w-2xl text-sm text-white/80 sm:text-base">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-white/70" data-i18n="index.counters.eyebrow">Our
+          Impact</p>
+        <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl" data-i18n="index.counters.title">Trusted Results Across
+          Every Smile</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-sm text-white/80 sm:text-base" data-i18n="index.counters.desc">
           We track every milestone so patients can see the care, precision, and outcomes behind our treatment.
         </p>
       </div>
@@ -95,61 +161,144 @@
       <div class="mt-10 grid gap-4 sm:grid-cols-3">
         <article class="rounded-2xl bg-white/10 p-6 text-center backdrop-blur">
           <p class="counter-number text-4xl font-extrabold sm:text-5xl" data-target="1240">0</p>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75">Patients Treated</p>
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75"
+            data-i18n="index.counters.patients">Patients Treated</p>
         </article>
         <article class="rounded-2xl bg-white/10 p-6 text-center backdrop-blur">
           <p class="counter-number text-4xl font-extrabold sm:text-5xl" data-target="980">0</p>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75">Smiles Restored</p>
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75"
+            data-i18n="index.counters.smiles">Smiles Restored</p>
         </article>
         <article class="rounded-2xl bg-white/10 p-6 text-center backdrop-blur">
           <p class="counter-number text-4xl font-extrabold sm:text-5xl" data-target="320">0</p>
-          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75">Implants Completed</p>
+          <p class="mt-2 text-sm font-semibold uppercase tracking-[0.2em] text-white/75"
+            data-i18n="index.counters.implants">Implants Completed</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════
+       HOME – DOCTOR SECTION
+  ═══════════════════════════════════════════ -->
+  <section id="doctor" class="relative mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
 
-  <!-- <section id="about" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
-    <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
-      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80"
-        class="h-80 w-full rounded-2xl object-cover shadow-lg" alt="Clinic">
-        <div>
-        <h2 class="text-3xl font-extrabold text-clinic-teal">A trusted dental care destination</h2>
-        <p class="mt-4 text-slate-600">Dental Delight combines advanced technology and compassionate care to deliver
-          excellent outcomes in preventive, cosmetic, and restorative dentistry.</p>
-        <a href="about.html"
-          class="mt-6 inline-block rounded-md bg-clinic-teal px-5 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-mist hover:text-clinic-teal">Learn
-          More</a>
-      </div>
+    <!-- ── Section Header ── -->
+    <div class="text-center mb-10">
+      <span class="section-eyebrow
+                   inline-flex items-center gap-2
+                   rounded-full border border-teal-600/20
+                   bg-teal-600/8 px-4 py-1
+                   text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-teal-600
+                   mb-3" data-i18n="index.doctor.eyebrow">
+        Meet Your Doctor
+      </span>
+      <h2 class="font-['Cormorant_Garamond',serif] text-3xl font-bold tracking-tight text-slate-900 mt-2"
+        data-i18n="index.doctor.title">
+        Our Doctor
+      </h2>
+      <div class="mx-auto my-4 h-[3px] w-14 rounded-sm" style="background:linear-gradient(90deg,#0d9488,#b5893a)"></div>
     </div>
-  </section> -->
+
+    <!-- ── Doctor Card ── -->
+    <div class="mx-auto max-w-sm">
+      <a href="doctor.html" class="block w-fit mx-auto transition-opacity hover:opacity-95"
+        aria-label="Learn more about Dr. Menna Abdallah">
+
+        <!-- img-outer wrapper — same class names as doctor page so the CSS reuses them -->
+        <div class="img-outer relative inline-block w-full">
+
+          <!-- Spinning conic ring (keyframes + conic-gradient in doctor.css) -->
+          <div class="spin-ring"></div>
+          <div class="spin-ring-gap"></div>
+
+          <!-- "Lead Dentist" pill — exact same as doctor page -->
+          <span class="img-pill
+                       absolute top-5 -right-3 z-10
+                       rounded-full px-4 py-1.5
+                       text-[0.68rem] font-bold uppercase tracking-[0.15em] text-white whitespace-nowrap
+                       shadow-[0_4px_14px_rgba(181,137,58,0.35)]"
+            style="background:linear-gradient(135deg,#b5893a,#d4a254)" data-i18n="doctor.profile.pill">
+            ✦ Lead Dentist
+          </span>
+
+          <!-- Photo card: hover lift + imgFloat animation from doctor.css -->
+          <div class="img-card relative z-[2] overflow-hidden rounded-[2rem] cursor-pointer"
+            style="box-shadow:var(--shadow-lift)">
+
+            <img src="./assets/images/Doctor-Photo.png" alt="Dr. Menna Abdallah – Lead Cosmetic Dentist" loading="lazy"
+              class="block w-full object-cover bg-clinic-cream" style="aspect-ratio:4/5">
+
+            <!-- Gradient overlay -->
+            <div class="absolute bottom-0 left-0 right-0 h-[45%] pointer-events-none"
+              style="background:linear-gradient(to top,rgba(15,23,42,0.62) 0%,transparent 100%)">
+            </div>
+
+            <!-- Glassmorphism name badge (backdrop-filter in doctor.css) -->
+            <div class="img-name-badge absolute bottom-6 left-5 right-5 rounded-2xl px-[1.1rem] py-[0.85rem]">
+              <div
+                class="font-['Cormorant_Garamond',serif] text-xl font-bold leading-[1.2] tracking-[-0.01em] text-white">
+                Dr. Menna Abdallah
+              </div>
+              <div class="mt-1 text-[0.76rem] uppercase tracking-[0.07em] text-white/80" data-i18n="index.doctor.role">
+                Lead Dentist · Dental Delight Clinic
+              </div>
+            </div>
+          </div><!-- /img-card -->
+
+          <!-- "View Full Profile" hover overlay -->
+          <div class="absolute inset-0 z-[3] flex items-end justify-center pb-28
+                      opacity-0 transition-opacity duration-300
+                      group-hover:opacity-100
+                      rounded-[2rem] pointer-events-none" id="doctor-home-overlay">
+          </div>
+
+        </div><!-- /img-outer -->
+
+        <!-- Visit profile CTA below card -->
+        <div class="relative z-10 mt-5 flex items-center justify-center gap-2 rounded-full bg-clinic-bronze/10 px-1 py-2
+              text-sm font-extrabold text-clinic-bronze transition-all duration-300 hover:gap-3"
+          data-i18n="index.doctor.cta">
+          View Full Profile
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+
+      </a><!-- /link -->
+    </div><!-- /max-w-sm -->
+  </section>
 
   <section id="services" class="bg-white/70 py-16">
     <div class="mx-auto w-full max-w-6xl px-4 sm:px-6">
       <div class="text-center">
-        <h2 class="text-3xl font-extrabold text-clinic-teal">Our Services</h2>
-        <p class="mx-auto mt-3 max-w-2xl text-slate-600">Complete dental solutions designed for healthy, beautiful,
-          long-lasting smiles.</p>
+        <h2 class="text-3xl font-extrabold text-clinic-teal" data-i18n="index.services.title">Our Services</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-slate-600" data-i18n="index.services.desc">Complete dental solutions
+          designed for healthy, beautiful, long-lasting smiles.</p>
       </div>
       <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <article class="rounded-2xl border border-clinic-mist/30 bg-clinic-cream p-6 shadow-sm">
-          <h3 class="text-lg font-bold text-clinic-teal">General Checkups</h3>
-          <p class="mt-2 text-sm text-slate-600">Routine exams, diagnostics, and prevention plans.</p>
+          <h3 class="text-lg font-bold text-clinic-teal" data-i18n="index.services.card1.title">General Checkups</h3>
+          <p class="mt-2 text-sm text-slate-600" data-i18n="index.services.card1.desc">Routine exams, diagnostics, and
+            prevention plans.</p>
         </article>
         <article class="rounded-2xl border border-clinic-mist/30 bg-clinic-cream p-6 shadow-sm">
-          <h3 class="text-lg font-bold text-clinic-teal">Orthodontics</h3>
-          <p class="mt-2 text-sm text-slate-600">Braces and aligners for functional alignment.</p>
+          <h3 class="text-lg font-bold text-clinic-teal" data-i18n="index.services.card2.title">Orthodontics</h3>
+          <p class="mt-2 text-sm text-slate-600" data-i18n="index.services.card2.desc">Braces and aligners for
+            functional
+            alignment.</p>
         </article>
         <article class="rounded-2xl border border-clinic-mist/30 bg-clinic-cream p-6 shadow-sm">
-          <h3 class="text-lg font-bold text-clinic-teal">Teeth Whitening</h3>
-          <p class="mt-2 text-sm text-slate-600">Safe procedures for brighter, confident smiles.</p>
+          <h3 class="text-lg font-bold text-clinic-teal" data-i18n="index.services.card3.title">Teeth Whitening</h3>
+          <p class="mt-2 text-sm text-slate-600" data-i18n="index.services.card3.desc">Safe procedures for brighter,
+            confident smiles.</p>
         </article>
       </div>
       <div class="text-center">
         <a href="services.html"
-          class="mt-8 inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold">View
-          All Services</a>
+          class="mt-8 inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold"
+          data-i18n="index.services.cta">View All Services</a>
       </div>
     </div>
   </section>
@@ -157,49 +306,35 @@
   <section id="cases" class="bg-white/70 py-16">
     <div class="mx-auto w-full max-w-6xl px-4 sm:px-6">
       <div class="text-center">
-        <h2 class="text-3xl font-extrabold text-clinic-teal">Before and After Cases</h2>
+        <h2 class="text-3xl font-extrabold text-clinic-teal" data-i18n="index.cases.title">Before and After Cases</h2>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2">
         <figure class="overflow-hidden rounded-2xl border border-clinic-mist/40 bg-white shadow-sm">
           <img src="https://picsum.photos/900/500?random=11" alt="Before case" class="h-64 w-full object-cover">
-          <figcaption class="px-4 py-3 text-sm font-semibold text-clinic-teal">Before</figcaption>
+          <figcaption class="px-4 py-3 text-sm font-semibold text-clinic-teal" data-i18n="index.cases.before">Before
+          </figcaption>
         </figure>
         <figure class="overflow-hidden rounded-2xl border border-clinic-mist/40 bg-white shadow-sm">
           <img src="https://picsum.photos/900/500?random=12" alt="After case" class="h-64 w-full object-cover">
-          <figcaption class="px-4 py-3 text-sm font-semibold text-clinic-teal">After</figcaption>
+          <figcaption class="px-4 py-3 text-sm font-semibold text-clinic-teal" data-i18n="index.cases.after">After
+          </figcaption>
         </figure>
       </div>
       <div class="text-center">
         <a href="cases.html"
-          class="mt-8 inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold">View
-          More Cases</a>
+          class="mt-8 inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold"
+          data-i18n="index.cases.cta">View More Cases</a>
       </div>
     </div>
   </section>
 
-  <section id="doctor" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
-    <div class="text-center">
-      <h2 class="text-3xl font-extrabold text-clinic-teal">Our Doctor</h2>
-    </div>
-    <div class="mx-auto mt-10 max-w-md">
-      <a href="doctor.html" class="block hover:opacity-90 transition hover:scale-105 w-fit mx-auto">
-        <article class="overflow-hidden rounded-2xl border border-clinic-mist/30 bg-white shadow-sm">
-          <img src="./assets/images/Doctor-Photo.png" alt="Doctor" class="h-fit w-fit object-contain bg-clinic-cream">
-          <div class="p-5">
-            <h3 class="text-lg font-bold text-clinic-teal">Dr. Menna Abdallah</h3>
-            <p class="mt-1 text-sm text-slate-600">Lead Dentist</p>
-          </div>
-        </article>
-      </a>
-    </div>
-  </section>
 
   <section id="testimonials" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
     <div class="text-center">
-      <h2 class="text-3xl font-extrabold text-clinic-teal">Patient Reviews</h2>
+      <h2 class="text-3xl font-extrabold text-clinic-teal" data-i18n="index.reviews.title">Patient Reviews</h2>
       <p class="mt-2 text-sm text-slate-600">
         <a href="https://maps.app.goo.gl/3h8RMKLUmd7TqFQR6" target="_blank"
-          class="text-clinic-bronze hover:underline font-semibold">
+          class="text-clinic-bronze hover:underline font-semibold" data-i18n="index.reviews.cta">
           View all reviews on Google Maps
         </a>
       </p>
@@ -216,26 +351,30 @@
       </div>
 
       <!-- Slider Controls -->
-      <div class="mt-6 flex items-center justify-center gap-4">
-        <button id="prevReview"
-          class="rounded-full border border-clinic-teal p-2 text-clinic-teal hover:bg-clinic-teal hover:text-white transition"
-          aria-label="Previous review">
-          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-          </svg>
-        </button>
-
-        <div id="sliderDots" class="flex gap-2">
+      <div class="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-6">
+        <!-- Dots Container -->
+        <div id="sliderDots"
+          class="order-1 flex flex-wrap justify-center gap-2 max-w-full px-4 sm:order-2 sm:max-w-none">
           <!-- Dots will be generated here -->
         </div>
 
-        <button id="nextReview"
-          class="rounded-full border border-clinic-teal p-2 text-clinic-teal hover:bg-clinic-teal hover:text-white transition"
-          aria-label="Next review">
-          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-        </button>
+        <!-- Navigation Buttons -->
+        <div class="order-2 flex items-center justify-center gap-4 sm:order-1 sm:contents">
+          <button id="prevReview"
+            class="rounded-full border border-clinic-teal p-2 text-clinic-teal hover:bg-clinic-teal hover:text-white transition sm:order-1"
+            aria-label="Previous review">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button id="nextReview"
+            class="rounded-full border border-clinic-teal p-2 text-clinic-teal hover:bg-clinic-teal hover:text-white transition sm:order-3"
+            aria-label="Next review">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -243,9 +382,9 @@
   <!-- Map & Location -->
   <section id="location" class="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6">
     <div class="text-center">
-      <h2 class="text-3xl font-extrabold text-clinic-teal">Find Us</h2>
-      <p class="mx-auto mt-3 max-w-2xl text-slate-600">Conveniently located — drop by or get directions to our clinic.
-      </p>
+      <h2 class="text-3xl font-extrabold text-clinic-teal" data-i18n="index.location.title">Find Us</h2>
+      <p class="mx-auto mt-3 max-w-2xl text-slate-600" data-i18n="index.location.desc">Conveniently located — drop by or
+        get directions to our clinic.</p>
     </div>
     <div class="mt-8 rounded-2xl overflow-hidden border border-clinic-mist/40 bg-white shadow-sm">
       <iframe
@@ -257,92 +396,62 @@
 
     <div class="mt-4 text-center">
       <a href="https://maps.app.goo.gl/3h8RMKLUmd7TqFQR6" target="_blank"
-        class="inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold">Open
-        in Google Maps</a>
+        class="inline-block rounded-md bg-clinic-bronze px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-gold"
+        data-i18n="index.location.cta">Open in Google Maps</a>
     </div>
   </section>
-
-  <!-- <section id="contact" class="bg-white/70 py-16">
-    <div class="mx-auto grid w-full max-w-6xl gap-8 px-4 sm:px-6 lg:grid-cols-5">
-      <div class="lg:col-span-3">
-        <h2 class="text-3xl font-extrabold text-clinic-teal">Book an Appointment</h2>
-        <form id="contactForm" novalidate class="mt-6 space-y-4">
-          <div>
-            <label class="mb-1 block text-sm font-semibold text-slate-700">Name</label>
-            <input id="name" type="text"
-              class="w-full rounded-md border border-clinic-mist/50 bg-white px-4 py-3 outline-none focus:border-clinic-teal">
-            <p class="mt-1 hidden text-xs font-semibold text-red-600">Please enter your name.</p>
-          </div>
-          <div>
-            <label class="mb-1 block text-sm font-semibold text-slate-700">Phone</label>
-            <input id="phone" type="tel"
-              class="w-full rounded-md border border-clinic-mist/50 bg-white px-4 py-3 outline-none focus:border-clinic-teal">
-            <p class="mt-1 hidden text-xs font-semibold text-red-600">Enter a valid phone number.</p>
-          </div>
-          <div>
-            <label class="mb-1 block text-sm font-semibold text-slate-700">Age</label>
-            <input id="age" type="number"
-              class="w-full rounded-md border border-clinic-mist/50 bg-white px-4 py-3 outline-none focus:border-clinic-teal">
-            <p class="mt-1 hidden text-xs font-semibold text-red-600">Enter a valid age.</p>
-          </div>
-          <button
-            class="rounded-md bg-clinic-teal px-6 py-3 text-sm font-bold uppercase tracking-wide text-white hover:bg-clinic-mist hover:text-clinic-teal"
-            type="submit">Submit</button>
-          <p id="formFeedback" class="text-sm font-semibold"></p>
-        </form>
-      </div>
-      <aside class="rounded-2xl border border-clinic-mist/40 bg-clinic-teal p-6 text-white lg:col-span-2">
-        <h3 class="text-lg font-bold">Phone</h3>
-        <p class="mt-2 text-sm text-white/90">+20 1XX XXX XXXX</p>
-        <h3 class="mt-6 text-lg font-bold">Working Hours</h3>
-        <p class="mt-2 text-sm text-white/90">Sat - Thu: 10:00 AM - 9:00 PM<br>Friday: Closed</p>
-      </aside>
-    </div>
-  </section> -->
 
   <footer class="bg-clinic-teal py-10 text-clinic-cream">
     <div class="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3">
       <div>
-        <h4 class="text-lg font-bold">Dental Delight</h4>
-        <p class="mt-2 text-sm text-clinic-cream/80">Modern dental care with a premium patient experience.</p>
+        <h4 class="text-lg font-bold" data-i18n="footer.brand">Dental Delight</h4>
+        <p class="mt-2 text-sm text-clinic-cream/80" data-i18n="footer.tagline">Modern dental care with a premium
+          patient
+          experience.</p>
       </div>
       <div>
-        <h5 class="text-sm font-bold uppercase tracking-wide">Quick Links</h5>
-        <div class="mt-2 space-y-1 text-sm text-clinic-cream/80"><a href="about.html"
-            class="block hover:text-white">About</a><a href="services.html"
-            class="block hover:text-white">Services</a><a href="doctor.html"
-            class="block hover:text-white">Doctor</a><a href="cases.html" class="block hover:text-white">Cases</a>
+        <h5 class="text-sm font-bold uppercase tracking-wide" data-i18n="footer.links">Quick Links</h5>
+        <div class="mt-2 space-y-1 text-sm text-clinic-cream/80"><a href="about.html" class="block hover:text-white"
+            data-i18n="nav.about">About</a><a href="services.html" class="block hover:text-white"
+            data-i18n="nav.services">Services</a><a href="doctor.html" class="block hover:text-white"
+            data-i18n="nav.doctor">Doctor</a><a href="cases.html" class="block hover:text-white"
+            data-i18n="nav.cases">Cases</a>
         </div>
       </div>
       <div>
-        <h5 class="text-sm font-bold uppercase tracking-wide">Contact</h5>
-        <p class="mt-2 text-sm text-clinic-cream/80">WhatsApp booking is available every day during clinic hours.</p>
+        <h5 class="text-sm font-bold uppercase tracking-wide" data-i18n="footer.contact">Contact Us</h5>
         <div class="mt-4 flex items-center gap-3">
           <a href="https://www.facebook.com/Dntl.Delight" target="_blank" rel="noopener noreferrer"
             class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
             aria-label="Dental Delight on Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
-              <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.9 3.78-3.9 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.78-1.64 1.57V12h2.8l-.45 2.89h-2.35v6.99A10 10 0 0 0 22 12Z"/>
+              <path
+                d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.9 3.78-3.9 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.78-1.64 1.57V12h2.8l-.45 2.89h-2.35v6.99A10 10 0 0 0 22 12Z" />
             </svg>
           </a>
-          <a href="https://www.instagram.com/dental.delight.center?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.instagram.com/dental.delight.center?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank" rel="noopener noreferrer"
             class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
             aria-label="Dental Delight on Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
-              <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm4.5-3.2a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/>
+              <path
+                d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm4.5-3.2a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z" />
             </svg>
           </a>
-          <a href="https://www.tiktok.com/@dental.delight.center?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.tiktok.com/@dental.delight.center?is_from_webapp=1&sender_device=pc" target="_blank"
+            rel="noopener noreferrer"
             class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
             aria-label="Dental Delight on TikTok">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
-              <path d="M15.5 3c.4 1.6 1.6 2.9 3.2 3.4V9c-1.6-.1-3.1-.6-4.4-1.5v7.2a4.8 4.8 0 1 1-4.8-4.8c.4 0 .8 0 1.2.1v2.7c-.3-.1-.6-.2-.9-.2a2.2 2.2 0 1 0 2.2 2.2V3h3.5Z"/>
+              <path
+                d="M15.5 3c.4 1.6 1.6 2.9 3.2 3.4V9c-1.6-.1-3.1-.6-4.4-1.5v7.2a4.8 4.8 0 1 1-4.8-4.8c.4 0 .8 0 1.2.1v2.7c-.3-.1-.6-.2-.9-.2a2.2 2.2 0 1 0 2.2 2.2V3h3.5Z" />
             </svg>
           </a>
         </div>
       </div>
     </div>
-    <p class="mt-8 text-center text-xs text-clinic-cream/70">© 2026 Dental Delight. All rights reserved.</p>
+    <p class="mt-8 text-center text-xs text-clinic-cream/70" data-i18n="footer.rights">© 2026 Eng.Mohanad Khaled. All
+      rights reserved.</p>
   </footer>
 
   <a class="fixed bottom-5 right-5 flex items-center justify-center rounded-full bg-green-500 h-12 w-12 text-white shadow-lg hover:scale-110 transition"
@@ -355,6 +464,7 @@
     </svg>
   </a>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/index.js"></script>
 </body>
 

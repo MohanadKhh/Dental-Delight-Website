@@ -4,172 +4,276 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doctor Profile – Dental Delight</title>
+    <title data-i18n="meta.doctor.title">Doctor Profile | Dental Delight</title>
+    <link rel="icon" type="image/png" href="assets/images/TapLogo.png" />
 
-    <!-- ═══════════════════════════════════════════
-       CDN DEPENDENCIES  (see setup notes below)
-  ═══════════════════════════════════════════ -->
-    <!-- 1. Bootstrap 5.3 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <!-- 2. AOS – Animate On Scroll -->
+    <!-- AOS – Animate On Scroll -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <!-- 3. Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind 4 + site styles -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Residual CSS (animations, pseudo-elements, conic-gradient, backdrop-filter) -->
     <link rel="stylesheet" href="assets/css/doctor.css">
 </head>
 
-<body>
+<body class="font-sans">
 
-    <!-- Navigation Bar -->
+    <!-- ═══════════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════════ -->
     <nav class="relative z-20 w-full border-b border-white/15 bg-clinic-cream backdrop-blur">
         <div class="mx-auto flex w-full items-center justify-between px-4 py-2 sm:px-16">
-            <a href="index.html" aria-label="Go to home"
-                class="rounded-lg bg-clinic-cream/90 backdrop-blur transition hover:scale-101">
-
-                <img src="assets/images/logo.png" alt="Dental Delight logo"
+            <a href="index.html" class="rounded-lg bg-clinic-cream/90 backdrop-blur transition hover:scale-101">
+                <img src="assets/images/logo.png" alt="Dental Delight logo" data-i18n="nav.logoAlt" data-i18n-attr="alt"
                     class="h-14 w-28 object-contain md:h-16 md:w-36">
             </a>
 
             <button data-menu-toggle type="button"
-                class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden">Menu</button>
+                class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden"
+                data-i18n="nav.menu">Menu</button>
 
-            <ul class="site-nav hidden items-center gap-2 lg:flex">
-                <li><a href="index.html" class="rounded-md px-3 py-2 text-lg font-semibold">Home</a></li>
-                <li><a href="about.html" class="rounded-md px-3 py-2 text-lg font-semibold">About</a></li>
-                <li><a href="services.html" class="rounded-md px-3 py-2 text-lg font-semibold">Services</a></li>
-                <li><a href="doctor.html" class="rounded-md px-3 py-2 text-lg font-semibold is-active">Doctor</a></li>
-                <li><a href="cases.html" class="rounded-md px-3 py-2 text-lg font-semibold">Cases</a></li>
+            <ul class="hidden items-center gap-2 lg:flex">
+                <li><a href="index.html"
+                        class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+                        data-i18n="nav.home">Home</a>
+                </li>
+                <li><a href="about.html"
+                        class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+                        data-i18n="nav.about">About</a>
+                </li>
+                <li><a href="services.html"
+                        class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+                        data-i18n="nav.services">Services</a>
+                </li>
+                <li><a href="doctor.html" class="rounded-md px-3 py-2 text-lg font-semibold text-clinic-bronze"
+                        data-i18n="nav.doctor">Doctor</a></li>
+                <li><a href="cases.html"
+                        class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+                        data-i18n="nav.cases">Cases</a>
+                </li>
             </ul>
-            <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
-                class="hidden ml-2 rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex">Book
-                Now</a>
-
+            <div class="hidden items-center gap-2 lg:flex">
+                <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
+                    class="rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex"
+                    data-i18n="nav.bookNow">Book Now</a>
+                <button type="button"
+                    class="rounded-md border border-clinic-teal px-3 py-2 text-xs font-semibold text-clinic-teal"
+                    data-i18n-toggle aria-label="Switch language">AR</button>
+            </div>
         </div>
+
         <div id="mobileMenu" class="hidden border-t border-clinic-mist/40 bg-clinic-cream px-4 py-4 lg:hidden">
             <div class="flex flex-col gap-2">
                 <a href="index.html"
-                    class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Home</a>
+                    class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+                    data-i18n="nav.home">Home</a>
                 <a href="about.html"
-                    class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">About</a>
+                    class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+                    data-i18n="nav.about">About</a>
                 <a href="services.html"
-                    class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Services</a>
+                    class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+                    data-i18n="nav.services">Services</a>
                 <a href="doctor.html"
-                    class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal">Doctor</a>
+                    class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal"
+                    data-i18n="nav.doctor">Doctor</a>
                 <a href="cases.html"
-                    class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Cases</a>
-                <a href="https://clinic.nebras-dentalore.com/mennadc/OnlineBooking"
-                    class="mt-1 rounded-md bg-clinic-bronze px-3 py-2 text-center text-sm font-semibold text-white">Book
-                    Now</a>
+                    class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+                    data-i18n="nav.cases">Cases</a>
+                <button type="button"
+                    class="mt-1 rounded-md border border-clinic-teal px-3 py-2 text-center text-sm font-semibold text-clinic-teal"
+                    data-i18n-toggle aria-label="Switch language">AR</button>
             </div>
         </div>
     </nav>
 
-
     <!-- ═══════════════════════════════════════════
-     LIGHTBOX (cert image preview)
-═══════════════════════════════════════════ -->
-    <div id="cert-lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview">
-        <span class="lb-close" onclick="closeLightbox()" title="Close">✕</span>
-        <img id="lb-img" src="" alt="Certificate">
+         LIGHTBOX
+    ═══════════════════════════════════════════ -->
+    <div id="cert-lightbox" class="hidden fixed inset-0 z-[9999] items-center justify-center p-8" role="dialog"
+        aria-modal="true" aria-label="Certificate preview">
+        <!-- lb-close: backdrop-filter + exact sizing kept in CSS -->
+        <span
+            class="lb-close absolute top-5 right-6 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/20 text-xl text-white transition-colors hover:bg-white/20"
+            onclick="closeLightbox()" title="Close">✕</span>
+        <img id="lb-img" src="" alt="Certificate"
+            class="max-h-[85vh] max-w-[90%] rounded-2xl shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
     </div>
 
 
-
     <!-- ═══════════════════════════════════════════
-     DOCTOR PROFILE SECTION
-═══════════════════════════════════════════ -->
-    <section id="doctor-profile">
+         DOCTOR PROFILE SECTION
+    ═══════════════════════════════════════════ -->
+    <section id="doctor-profile" class="relative px-12 py-12 md:py-16">
 
-        <!-- ambient blobs -->
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+        <!-- Ambient blobs -->
+        <div class="blob blob-1 absolute -top-24 -left-28 h-[420px] w-[420px] rounded-full pointer-events-none blur-sm"
+            style="background:radial-gradient(circle,rgba(13,148,136,0.12) 0%,transparent 68%)"></div>
+        <div class="blob blob-2 absolute -bottom-16 -right-20 h-[300px] w-[300px] rounded-full pointer-events-none blur-sm"
+            style="background:radial-gradient(circle,rgba(13,148,136,0.09) 0%,transparent 68%)"></div>
+        <div class="blob blob-3 absolute top-[40%] left-1/2 h-[180px] w-[180px] rounded-full pointer-events-none blur-sm"
+            style="background:radial-gradient(circle,rgba(181,137,58,0.07) 0%,transparent 68%)"></div>
 
-        <!-- floating particles (JS-generated) -->
+        <!-- Floating particles (JS-generated) -->
         <div id="particles-host" aria-hidden="true"></div>
 
-        <div class="container position-relative" style="z-index:1;">
+        <div class="container relative mx-auto" style="z-index:1;">
 
             <!-- ── Section Header ── -->
-            <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out-quart">
-                <span class="section-eyebrow">Meet Your Doctor</span>
-                <h2 class="section-title mt-2">Excellence in Every Smile</h2>
-                <div class="title-underline"></div>
-                <p class="section-desc mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-out-quart">
+
+                <!-- section-eyebrow: ::before dot lives in CSS -->
+                <span class="section-eyebrow
+                             inline-flex items-center gap-2
+                             rounded-full border border-teal-600/20
+                             bg-teal-600/8 px-4 py-1
+                             text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-teal-600
+                             mb-3" data-i18n="doctor.header.eyebrow">
+                    Excellence in Every Smile
+                </span>
+
+                <!-- section-title: clamp() lives in CSS -->
+                <h1 class="section-title font-['Cormorant_Garamond',serif] font-bold leading-[1.12] tracking-[-0.02em] text-slate-900 mt-2">
+                    <span data-i18n="doctor.header.titlePrefix">Meet Your</span>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-clinic-gold to-clinic-gold"
+                        data-i18n="doctor.header.titleEmphasis">Doctor
+                    </span>
+                </h1>
+
+                <!-- title-underline: gradient lives inline since it's a one-liner -->
+                <div class="mx-auto my-4 h-[3px] w-14 rounded-sm"
+                    style="background:linear-gradient(90deg,#0d9488,#b5893a)"></div>
+
+                <p class="mx-auto max-w-[480px] text-base leading-[1.8] text-slate-500" data-i18n="doctor.header.desc">
                     Board-certified cosmetic dentist dedicated to crafting beautiful, lasting smiles through artistry,
                     precision, and genuine care.
                 </p>
             </div>
 
             <!-- ── Main Two-Column ── -->
-            <div class="row g-5 align-items-start">
+            <div class="flex flex-col lg:flex-row gap-10 items-start">
 
                 <!-- ════ LEFT: Doctor Image ════ -->
-                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900" data-aos-easing="ease-out-quart"
-                    data-aos-delay="100">
+                <div class="w-full lg:w-5/12 doctor-left" data-aos="fade-right" data-aos-duration="900"
+                    data-aos-easing="ease-out-quart" data-aos-delay="100">
 
                     <div class="doctor-sticky">
-                        <div class="img-outer">
-                            <!-- spinning gradient ring -->
+
+                        <!-- img-outer -->
+                        <div class="img-outer relative inline-block w-full">
+
+                            <!-- Spinning ring + gap: conic-gradient & keyframes in CSS -->
                             <div class="spin-ring"></div>
                             <div class="spin-ring-gap"></div>
 
-                            <!-- Lead Dentist floating pill -->
-                            <span class="img-pill">✦ Lead Dentist</span>
+                            <!-- Lead Dentist pill -->
+                            <span class="img-pill
+                                         absolute top-5 -right-3 z-10
+                                         rounded-full px-4 py-1.5
+                                         text-[0.68rem] font-bold uppercase tracking-[0.15em] text-white whitespace-nowrap
+                                         shadow-[0_4px_14px_rgba(181,137,58,0.35)]"
+                                style="background:linear-gradient(135deg,#b5893a,#d4a254)"
+                                data-i18n="doctor.profile.pill">
+                                ✦ Lead Dentist
+                            </span>
 
                             <!-- Main photo card -->
-                            <div class="img-card">
+                            <div class="img-card relative z-[2] overflow-hidden rounded-[2rem] cursor-default"
+                                style="box-shadow:var(--shadow-lift)">
                                 <img src="./assets/images/Doctor-Photo.png"
-                                    alt="Dr. Menna Abdallah – Lead Cosmetic Dentist" loading="lazy">
-                                <div class="img-gradient-overlay"></div>
-                                <div class="img-name-badge">
-                                    <div class="dr-name">Dr. Menna Abdallah</div>
-                                    <div class="dr-role">Lead Cosmetic Dentist · Dental Delight Clinic</div>
+                                    alt="Dr. Menna Abdallah – Lead Cosmetic Dentist" loading="lazy"
+                                    class="block w-full object-cover" style="aspect-ratio:4/5">
+
+                                <!-- gradient overlay -->
+                                <div class="absolute bottom-0 left-0 right-0 h-[45%] pointer-events-none"
+                                    style="background:linear-gradient(to top,rgba(15,23,42,0.62) 0%,transparent 100%)">
+                                </div>
+
+                                <!-- name badge: backdrop-filter in CSS -->
+                                <div
+                                    class="img-name-badge absolute bottom-6 left-5 right-5 rounded-2xl px-[1.1rem] py-[0.85rem]">
+                                    <div
+                                        class="dr-name font-['Cormorant_Garamond',serif] text-xl font-bold leading-[1.2] tracking-[-0.01em] text-white">
+                                        Dr. Menna Abdallah
+                                    </div>
+                                    <div class="dr-role mt-1 text-[0.76rem] uppercase tracking-[0.07em] text-white/80"
+                                        data-i18n="doctor.profile.role">
+                                        Lead Cosmetic Dentist · Dental Delight Clinic
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </div><!-- /img-outer -->
 
                         <!-- Stats chips -->
-                        <div class="row g-2 mt-3" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
-                            <div class="col-4">
-                                <div class="stat-chip">
-                                    <div class="val">12+</div>
-                                    <div class="lbl">Years Exp.</div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="stat-chip">
-                                    <div class="val">2,400+</div>
-                                    <div class="lbl">Smiles Done</div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="stat-chip">
-                                    <div class="val">98%</div>
-                                    <div class="lbl">Satisfaction</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="grid grid-cols-3 gap-2 mt-3" data-aos="fade-up" data-aos-duration="600"
+                            data-aos-delay="400">
 
+                            <div class="stat-chip
+                                        rounded-2xl border border-teal-600/12 bg-white
+                                        px-2 py-[0.9rem] text-center
+                                        shadow-[var(--shadow-soft)]
+                                        transition-transform duration-[280ms] ease-out
+                                        hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(13,148,136,0.16)]">
+                                <div
+                                    class="font-['Cormorant_Garamond',serif] text-[1.55rem] font-bold leading-none text-teal-700">
+                                    12+</div>
+                                <div class="mt-1 text-[0.65rem] uppercase tracking-[0.08em] text-slate-500"
+                                    data-i18n="doctor.stats.years">Years Exp.
+                                </div>
+                            </div>
+
+                            <div class="stat-chip
+                                        rounded-2xl border border-teal-600/12 bg-white
+                                        px-2 py-[0.9rem] text-center
+                                        shadow-[var(--shadow-soft)]
+                                        transition-transform duration-[280ms] ease-out
+                                        hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(13,148,136,0.16)]">
+                                <div
+                                    class="font-['Cormorant_Garamond',serif] text-[1.55rem] font-bold leading-none text-teal-700">
+                                    2,400+</div>
+                                <div class="mt-1 text-[0.65rem] uppercase tracking-[0.08em] text-slate-500"
+                                    data-i18n="doctor.stats.smiles">Smiles Done
+                                </div>
+                            </div>
+
+                            <div class="stat-chip
+                                        rounded-2xl border border-teal-600/12 bg-white
+                                        px-2 py-[0.9rem] text-center
+                                        shadow-[var(--shadow-soft)]
+                                        transition-transform duration-[280ms] ease-out
+                                        hover:-translate-y-1.5 hover:shadow-[0_14px_36px_rgba(13,148,136,0.16)]">
+                                <div
+                                    class="font-['Cormorant_Garamond',serif] text-[1.55rem] font-bold leading-none text-teal-700">
+                                    98%</div>
+                                <div class="mt-1 text-[0.65rem] uppercase tracking-[0.08em] text-slate-500"
+                                    data-i18n="doctor.stats.satisfaction">Satisfaction
+                                </div>
+                            </div>
+
+                        </div><!-- /stats -->
+                    </div><!-- /doctor-sticky -->
                 </div><!-- /col left -->
 
-                <!-- ════ RIGHT: Bio + Certs ════ -->
-                <div class="col-lg-7 d-flex flex-column gap-4">
 
-                    <!-- Bio card -->
-                    <div class="bio-card" data-aos="fade-left" data-aos-duration="750" data-aos-delay="150"
-                        data-aos-easing="ease-out-quart">
-                        <h3>About Dr. Menna Abdallah</h3>
-                        <p>
+                <!-- ════ RIGHT: Bio + Certs ════ -->
+                <div class="w-full lg:w-7/12 flex flex-col gap-4">
+
+                    <!-- Bio card: ::after pseudo in CSS -->
+                    <div class="bio-card
+                                relative overflow-hidden rounded-[1.5rem] bg-white
+                                border border-teal-600/10 border-l-4 border-l-teal-600
+                                px-[1.8rem] py-[1.6rem] pr-[1.6rem]
+                                shadow-[var(--shadow-soft)]" data-aos="fade-left" data-aos-duration="750"
+                        data-aos-delay="150" data-aos-easing="ease-out-quart">
+                        <h3 class="font-['Cormorant_Garamond',serif] text-[1.2rem] font-bold text-slate-900 mb-[0.65rem]"
+                            data-i18n="doctor.bio.title">
+                            About Dr. Menna Abdallah
+                        </h3>
+                        <p class="text-[0.9rem] leading-[1.85] text-slate-700 m-0" data-i18n-html="doctor.bio.desc">
                             A graduate of <strong>Mansoura University – Faculty of Dentistry</strong> with over
                             <strong>12 years</strong> of clinical excellence, Dr. Menna specialises in aesthetic smile
                             makeovers, porcelain veneers, and full-mouth rehabilitations. Certified by the
@@ -180,25 +284,49 @@
 
                     <!-- Certificates -->
                     <div>
-                        <p class="certs-label" data-aos="fade-left" data-aos-duration="500" data-aos-delay="200">
+                        <p class="mb-[0.9rem] text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-slate-400"
+                            data-aos="fade-left" data-aos-duration="500" data-aos-delay="200"
+                            data-i18n="doctor.certs.title">
                             Qualifications &amp; Certifications
                         </p>
 
-                        <div class="d-flex flex-column gap-3">
+                        <div class="flex flex-col gap-3">
 
                             <!-- CERT 1 – AACD -->
-                            <div class="cert-card" data-color="teal" data-aos="fade-left" data-aos-duration="650"
-                                data-aos-delay="250" data-aos-easing="ease-out-quart">
-                                <img class="cert-thumb" src="./assets/images/Certificates/Certificate2.png"
+                            <div class="cert-card
+                                        relative overflow-hidden flex flex-col items-center gap-[0.85rem]
+                                        rounded-[1.2rem] border border-black/6 bg-white
+                                        p-4 pb-5 text-center
+                                        shadow-[0_6px_22px_rgba(0,0,0,0.05)] cursor-default" data-color="teal"
+                                data-aos="fade-left" data-aos-duration="650" data-aos-delay="250"
+                                data-aos-easing="ease-out-quart">
+
+                                <img class="cert-thumb
+                                            w-full max-w-[420px] h-auto rounded-[0.9rem] object-cover
+                                            border border-teal-600/12 cursor-pointer
+                                            shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+                                            transition-transform duration-[250ms] ease-out"
+                                    src="./assets/images/Certificates/Certificate2.png"
                                     alt="AACD Esthetic Dentistry Program Certificate" onclick="openLightbox(this.src)"
                                     title="Click to view full certificate">
-                                <div class="cert-info">
-                                    <div class="cert-title-text">AACD Esthetic Dentistry Program</div>
-                                    <div class="cert-org">American Academy of Cosmetic Dentistry</div>
+
+                                <div class="cert-info w-full min-w-0">
+                                    <div class="font-['Cormorant_Garamond',serif] text-[1.05rem] font-bold leading-[1.25] text-slate-900"
+                                        data-i18n="doctor.certs.aacd.title">
+                                        AACD Esthetic Dentistry Program
+                                    </div>
+                                    <div class="mt-1 text-[0.85rem] text-slate-500">
+                                        American Academy of Cosmetic Dentistry
+                                    </div>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-between w-100 mt-3">
-                                    <span class="cert-year-badge theme-teal">2021</span>
-                                    <div class="cert-check theme-teal">
+
+                                <div class="flex items-center justify-between w-full mt-3">
+                                    <span class="cert-year-badge theme-teal
+                                                 shrink-0 rounded-full px-3 py-1
+                                                 text-[0.78rem] font-bold whitespace-nowrap">2021</span>
+                                    <div
+                                        class="cert-check theme-teal
+                                                flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full">
                                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                             <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.5"
                                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -207,19 +335,40 @@
                                 </div>
                             </div>
 
-                            <!-- CERT 2 – Doctor Certificate -->
-                            <div class="cert-card" data-color="blue" data-aos="fade-left" data-aos-duration="650"
-                                data-aos-delay="370" data-aos-easing="ease-out-quart">
-                                <img class="cert-thumb" src="./assets/images/Certificates/Certificate1.png"
-                                    alt="Doctor Certificate" onclick="openLightbox(this.src)"
-                                    title="Click to view full certificate">
-                                <div class="cert-info">
-                                    <div class="cert-title-text">Advanced Smile Design Certification</div>
-                                    <div class="cert-org">International Dental Institute</div>
+                            <!-- CERT 2 – Advanced Smile Design -->
+                            <div class="cert-card
+                                        relative overflow-hidden flex flex-col items-center gap-[0.85rem]
+                                        rounded-[1.2rem] border border-black/6 bg-white
+                                        p-4 pb-5 text-center
+                                        shadow-[0_6px_22px_rgba(0,0,0,0.05)] cursor-default" data-color="blue"
+                                data-aos="fade-left" data-aos-duration="650" data-aos-delay="370"
+                                data-aos-easing="ease-out-quart">
+
+                                <img class="cert-thumb
+                                            w-full max-w-[420px] h-auto rounded-[0.9rem] object-cover
+                                            border border-teal-600/12 cursor-pointer
+                                            shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+                                            transition-transform duration-[250ms] ease-out"
+                                    src="./assets/images/Certificates/Certificate1.png" alt="Doctor Certificate"
+                                    onclick="openLightbox(this.src)" title="Click to view full certificate">
+
+                                <div class="cert-info w-full min-w-0">
+                                    <div class="font-['Cormorant_Garamond',serif] text-[1.05rem] font-bold leading-[1.25] text-slate-900"
+                                        data-i18n="doctor.certs.smile.title">
+                                        Advanced Smile Design Certification
+                                    </div>
+                                    <div class="mt-1 text-[0.85rem] text-slate-500">
+                                        International Dental Institute
+                                    </div>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-between w-100 mt-3">
-                                    <span class="cert-year-badge theme-blue">2022</span>
-                                    <div class="cert-check theme-blue">
+
+                                <div class="flex items-center justify-between w-full mt-3">
+                                    <span class="cert-year-badge theme-blue
+                                                 shrink-0 rounded-full px-3 py-1
+                                                 text-[0.78rem] font-bold whitespace-nowrap">2022</span>
+                                    <div
+                                        class="cert-check theme-blue
+                                                flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-full">
                                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                             <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.5"
                                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -229,19 +378,39 @@
                             </div>
 
                             <!-- CERT 3 – BDS Graduation -->
-                            <div class="cert-card" data-color="violet" data-aos="fade-left" data-aos-duration="650"
-                                data-aos-delay="490" data-aos-easing="ease-out-quart">
-                                <img class="cert-thumb" src="./assets/images/Certificates/Certificate3.jpg"
+                            <div class="cert-card
+                                        relative overflow-hidden flex flex-col items-center gap-[0.85rem]
+                                        rounded-[1.2rem] border border-black/6 bg-white
+                                        p-4 pb-5 text-center
+                                        shadow-[0_6px_22px_rgba(0,0,0,0.05)] cursor-default" data-color="violet"
+                                data-aos="fade-left" data-aos-duration="650" data-aos-delay="490"
+                                data-aos-easing="ease-out-quart">
+
+                                <img class="cert-thumb
+                                            w-full max-w-105 h-auto rounded-[0.9rem] object-cover
+                                            border border-teal-600/12 cursor-pointer
+                                            shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+                                            transition-transform duration-250 ease-out"
+                                    src="./assets/images/Certificates/Certificate3.jpg"
                                     alt="BDS – Mansoura University Graduation Certificate"
                                     onclick="openLightbox(this.src)" title="Click to view full certificate">
-                                <div class="cert-info">
-                                    <div class="cert-title-text">BDS – Bachelor of Dental Surgery</div>
-                                    <div class="cert-org">Mansoura University – Faculty of Dentistry · Class of 2019
+
+                                <div class="cert-info w-full min-w-0">
+                                    <div class="font-['Cormorant_Garamond',serif] text-[1.05rem] font-bold leading-[1.25] text-slate-900"
+                                        data-i18n="doctor.certs.bds.title">
+                                        BDS – Bachelor of Dental Surgery
+                                    </div>
+                                    <div class="mt-1 text-[0.85rem] text-slate-500">
+                                        Mansoura University – Faculty of Dentistry · Class of 2019
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-between w-100 mt-3">
-                                    <span class="cert-year-badge theme-violet">2019</span>
-                                    <div class="cert-check theme-violet">
+
+                                <div class="flex items-center justify-between w-full mt-3">
+                                    <span class="cert-year-badge theme-violet
+                                                 shrink-0 rounded-full px-3 py-1
+                                                 text-[0.78rem] font-bold whitespace-nowrap">2019</span>
+                                    <div class="cert-check theme-violet
+                                                flex h-6.5 w-6.5 shrink-0 items-center justify-center rounded-full">
                                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                             <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.5"
                                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -254,36 +423,69 @@
                     </div>
 
                 </div><!-- /col right -->
-            </div><!-- /row -->
+            </div><!-- /two-column -->
         </div><!-- /container -->
     </section>
 
 
-    <footer class="bg-clinic-teal py-10 text-clinic-cream">
-        <div class="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3">
-            <div>
-                <h4 class="text-lg font-bold">Dental Delight</h4>
-                <p class="mt-2 text-sm text-clinic-cream/80">Modern dental care with a premium patient experience.</p>
-            </div>
-            <div>
-                <h5 class="text-sm font-bold uppercase tracking-wide">Quick Links</h5>
-                <div class="mt-2 space-y-1 text-sm text-clinic-cream/80">
-                    <a href="about.html" class="block hover:text-white">About</a>
-                    <a href="services.html" class="block hover:text-white">Services</a>
-                    <a href="doctor.html" class="block hover:text-white">Doctor</a>
-                    <a href="cases.html" class="block hover:text-white">Cases</a>
-                </div>
-            </div>
-            <div>
-                <h5 class="text-sm font-bold uppercase tracking-wide">Contact</h5>
-                <p class="mt-2 text-sm text-clinic-cream/80">WhatsApp booking is available every day during clinic
-                    hours.</p>
-            </div>
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+  <footer class="bg-clinic-teal py-10 text-clinic-cream">
+    <div class="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3">
+      <div>
+        <h4 class="text-lg font-bold" data-i18n="footer.brand">Dental Delight</h4>
+        <p class="mt-2 text-sm text-clinic-cream/80" data-i18n="footer.tagline">Modern dental care with a premium
+          patient
+          experience.</p>
+      </div>
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wide" data-i18n="footer.links">Quick Links</h5>
+        <div class="mt-2 space-y-1 text-sm text-clinic-cream/80"><a href="about.html" class="block hover:text-white"
+            data-i18n="nav.about">About</a><a href="services.html" class="block hover:text-white"
+            data-i18n="nav.services">Services</a><a href="doctor.html" class="block hover:text-white"
+            data-i18n="nav.doctor">Doctor</a><a href="cases.html" class="block hover:text-white"
+            data-i18n="nav.cases">Cases</a>
         </div>
-        <p class="mt-8 text-center text-xs text-clinic-cream/70">© 2026 Dental Delight. All rights reserved.</p>
-    </footer>
+      </div>
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wide" data-i18n="footer.contact">Contact Us</h5>
+        <div class="mt-4 flex items-center gap-3">
+          <a href="https://www.facebook.com/Dntl.Delight" target="_blank" rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
+            aria-label="Dental Delight on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
+              <path
+                d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.9 3.78-3.9 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.78-1.64 1.57V12h2.8l-.45 2.89h-2.35v6.99A10 10 0 0 0 22 12Z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/dental.delight.center?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank" rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
+            aria-label="Dental Delight on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
+              <path
+                d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm4.5-3.2a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z" />
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@dental.delight.center?is_from_webapp=1&sender_device=pc" target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
+            aria-label="Dental Delight on TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
+              <path
+                d="M15.5 3c.4 1.6 1.6 2.9 3.2 3.4V9c-1.6-.1-3.1-.6-4.4-1.5v7.2a4.8 4.8 0 1 1-4.8-4.8c.4 0 .8 0 1.2.1v2.7c-.3-.1-.6-.2-.9-.2a2.2 2.2 0 1 0 2.2 2.2V3h3.5Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="mt-8 text-center text-xs text-clinic-cream/70" data-i18n="footer.rights">© 2026 Eng.Mohanad Khaled. All
+      rights reserved.</p>
+  </footer>
 
-    <a class="fixed bottom-5 right-5 flex items-center justify-center rounded-full bg-green-500 h-12 w-12 text-white shadow-lg hover:scale-110 transition"
+    <!-- WhatsApp FAB -->
+    <a class="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition hover:scale-110"
         href="https://wa.me/201093382358?text=Hello" target="_blank" aria-label="WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
             <path fill="#25D366"
@@ -293,12 +495,10 @@
         </svg>
     </a>
 
-
-    <!-- Bootstrap 5 JS bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <!-- Doctor scripts -->
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/doctor.js"></script>
 
 </body>

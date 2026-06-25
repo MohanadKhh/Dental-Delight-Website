@@ -91,63 +91,60 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const form = document.getElementById("contactForm");
-  if (!form) return;
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+      const name = document.getElementById("name");
+      const phone = document.getElementById("phone");
+      const age = document.getElementById("age");
+      const feedback = document.getElementById("formFeedback");
+      const phoneRegex = /^[0-9+\-\s]{8,15}$/;
+      let valid = true;
 
-    const name = document.getElementById("name");
-    const phone = document.getElementById("phone");
-    const age = document.getElementById("age");
-    const feedback = document.getElementById("formFeedback");
-    const phoneRegex = /^[0-9+\-\s]{8,15}$/;
-    let valid = true;
+      [name, phone, age].forEach((el) => {
+        el.classList.remove("border-red-500");
+        const errorText = el.nextElementSibling;
+        if (errorText) {
+          errorText.classList.add("hidden");
+        }
+      });
 
-    [name, phone, age].forEach((el) => {
-      el.classList.remove("border-red-500");
-      const errorText = el.nextElementSibling;
-      if (errorText) {
-        errorText.classList.add("hidden");
+      if (!name.value.trim()) {
+        name.classList.add("border-red-500");
+        if (name.nextElementSibling) name.nextElementSibling.classList.remove("hidden");
+        valid = false;
       }
+
+      if (!phoneRegex.test(phone.value.trim())) {
+        phone.classList.add("border-red-500");
+        if (phone.nextElementSibling) phone.nextElementSibling.classList.remove("hidden");
+        valid = false;
+      }
+
+      const ageNumber = Number(age.value);
+      if (!age.value || ageNumber < 1 || ageNumber > 120) {
+        age.classList.add("border-red-500");
+        if (age.nextElementSibling) age.nextElementSibling.classList.remove("hidden");
+        valid = false;
+      }
+
+      const t = window.i18n && typeof window.i18n.t === "function" ? window.i18n.t : (key) => key;
+      if (feedback) {
+        feedback.textContent = valid
+          ? t("form.feedback.success")
+          : t("form.feedback.error");
+        feedback.className = valid
+          ? "mt-2 text-sm font-semibold text-emerald-600"
+          : "mt-2 text-sm font-semibold text-red-600";
+      }
+
+      if (valid) form.reset();
     });
-
-    if (!name.value.trim()) {
-      name.classList.add("border-red-500");
-      if (name.nextElementSibling) name.nextElementSibling.classList.remove("hidden");
-      valid = false;
-    }
-
-    if (!phoneRegex.test(phone.value.trim())) {
-      phone.classList.add("border-red-500");
-      if (phone.nextElementSibling) phone.nextElementSibling.classList.remove("hidden");
-      valid = false;
-    }
-
-    const ageNumber = Number(age.value);
-    if (!age.value || ageNumber < 1 || ageNumber > 120) {
-      age.classList.add("border-red-500");
-      if (age.nextElementSibling) age.nextElementSibling.classList.remove("hidden");
-      valid = false;
-    }
-
-    feedback.textContent = valid
-      ? "Your request has been sent successfully."
-      : "Please complete all fields correctly.";
-    feedback.className = valid
-      ? "mt-2 text-sm font-semibold text-emerald-600"
-      : "mt-2 text-sm font-semibold text-red-600";
-
-    if (valid) form.reset();
-  });
+  }
 
   // Reviews Slider - manually curated reviews
   const reviews = [
-    {
-      name: "michael nabil",
-      rating: 5,
-      date: "2 months ago",
-      text: "I’ve always been nervous about dental visits, but this team completely changed my perspective. From the moment I walked in, I was greeted with warmth and professionalism. The procedure was painless, efficient, and handled with such care. If you're looking for a dentist who truly listens and prioritizes your comfort, look no further"
-    },
     {
       name: "Salma Ahmed",
       rating: 5,
@@ -159,12 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
       rating: 5,
       date: "3 months ago",
       text: "احسن عياده اسنان واشطر دكتوره فدنياا والله"
-    },
-    {
-      name: "Ezzahmed Mansour",
-      rating: 5,
-      date: "4 months ago",
-      text: "بالتوفيق ان شاء الله\nدكتوره ممتازه"
     },
     {
       name: "abdullah shah",
@@ -197,16 +188,16 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "دكتوره منه ذوق واحسن ما يمكن في ف التعامل و شاطره جدا اللهم بارك وعندها صبر ربنا يبارك ❤️😘 …"
     },
     {
-      name: "Nema Ramadan",
-      rating: 5,
-      date: "a year ago",
-      text: "دكتورة ممتازة وشاطره جدا لديها علم ومهارة جيدة جدا. حاصلة على زمالة من جامعة رويال كولدج من انجلترا."
-    },
-    {
       name: "Amna Farag",
       rating: 5,
       date: "a year ago",
       text: "الدكتورة كووتي وشطورة جداً ربنا يحفظها ويبارك فيها والعيادة مريحة نفسياً لدرجة النوم والله😂♥️♥️ …"
+    },
+    {
+      name: "michael nabil",
+      rating: 5,
+      date: "2 months ago",
+      text: "I’ve always been nervous about dental visits, but this team completely changed my perspective. From the moment I walked in, I was greeted with warmth and professionalism. The procedure was painless, efficient, and handled with such care. If you're looking for a dentist who truly listens and prioritizes your comfort, look no further"
     },
     {
       name: "Omar Hussien",
@@ -221,12 +212,6 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "بصراحه دكتوره منه ممتازه جدا ومن ناحية التعقيم فيه اهتمام شديد"
     },
     {
-      name: "Mostafa Saadeldin",
-      rating: 5,
-      date: "a year ago",
-      text: "الدكتوره شاطره جدا و الشغل محترف"
-    },
-    {
       name: "Abdulrahman Zaky",
       rating: 5,
       date: "a year ago",
@@ -237,12 +222,6 @@ document.addEventListener("DOMContentLoaded", () => {
       rating: 5,
       date: "a year ago",
       text: "المكان في منتهى النظافه والرعايه الطبيه على اعلى مستوى"
-    },
-    {
-      name: "Omama Ahmed",
-      rating: 5,
-      date: "Edited 3 months ago",
-      text: "المكان اكثر من رائع"
     },
     {
       name: "karem nabil",
@@ -257,94 +236,16 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "Very professional and efficient clinic"
     },
     {
-      name: "Mostafa Mahmoud",
-      rating: 5,
-      date: "a year ago",
-      text: "ممتازه"
-    },
-    {
       name: "Abdelbaset Draz",
       rating: 5,
       date: "a year ago",
       text: "Very good and accurate"
     },
     {
-      name: "Mohaned Khaled",
-      rating: 5,
-      date: "a year ago",
-      text: "مكان ممتز"
-    },
-    {
-      name: "Om Amin",
-      rating: 5,
-      date: "a year ago",
-      text: "ممتازة جدا"
-    },
-    {
-      name: "usama sanad",
-      rating: 5,
-      date: "a year ago",
-      text: "Perfec5"
-    },
-    {
       name: "Yomna Mohamed",
       rating: 5,
       date: "2 weeks ago",
       text: "A very clean and trust worthy practice, very professional doctor and lovely staff.\n10/10 👌🏻 …"
-    },
-    {
-      name: "Asmaa Saleh",
-      rating: 5,
-      date: "3 months ago",
-      text: "شكرا جدا على تقييمك الايجابي و يارب دايما في صحة و خير و سعادة"
-    },
-    {
-      name: "Hossam abdelhady",
-      rating: 5,
-      date: "3 months ago",
-      text: "شكرا جدا على تقييمك الايجابي و يارب دايما في صحة و خير و سعادة"
-    },
-    {
-      name: "هاجر ياسر فرغلى",
-      rating: 5,
-      date: "a year ago",
-      text: "شكرًا جزيلاً على التقييم الرائع\nنسعى دائمًا لتقديم أفضل رعاية صحية لضمان رضاكم التام\nنتطلع لاستقبالكم مرة أخرى قريبًا! 😊🦷✨‎\n …"
-    },
-    {
-      name: "Amal Hassan",
-      rating: 5,
-      date: "a year ago",
-      text: "شكرًا جزيلاً على التقييم الرائع\nنسعى دائمًا لتقديم أفضل رعاية صحية لضمان رضاكم التام\nنتطلع لاستقبالكم مرة أخرى قريبًا! 😊🦷✨ …"
-    },
-    {
-      name: "ahmed samir",
-      rating: 5,
-      date: "a year ago",
-      text: "🤩🦷🤩Thank you so much for your glowing recommendation  …"
-    },
-    {
-      name: "Ahmed Ahmed",
-      rating: 5,
-      date: "a year ago",
-      text: "Thank you so much for your glowing recommendation🤩🦷🤩 …"
-    },
-    {
-      name: "Hanan Ahmed",
-      rating: 5,
-      date: "a year ago",
-      text: "Thank you so much for your glowing recommendation🦷🤩🦷 …"
-    },
-    {
-      name: "Eman Ahmed",
-      rating: 5,
-      date: "a year ago",
-      text: "Thank you so much for your glowing recommendation🤩🦷🤩 …"
-    },
-    {
-      name: "Menna Mohammed1193",
-      rating: 5,
-      date: "a year ago",
-      text: "Thank you so much for your glowing recommendation🤩🦷🤩 …"
     }
   ];
   let currentReviewIndex = 0;
@@ -353,6 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const renderReviews = () => {
     const slider = document.getElementById("reviewsSlider");
     const dotsContainer = document.getElementById("sliderDots");
+    if (!slider || !dotsContainer) return;
 
     slider.innerHTML = "";
     dotsContainer.innerHTML = "";
@@ -366,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
       reviewDiv.innerHTML = `
         <article class="testimonial-card rounded-2xl border border-clinic-mist/30 bg-white p-6 shadow-sm mx-auto max-w-3xl">
           <div class="flex justify-center text-clinic-gold text-lg mb-3">${stars}</div>
-          <p class="testimonial-text text-sm text-slate-600 italic whitespace-pre-line">"${review.text}"</p>
+          <p class="testimonial-text text-center text-sm text-slate-600 italic whitespace-pre-line">"${review.text}"</p>
           <div class="testimonial-meta mt-4 text-center">
             <p class="text-sm font-bold text-clinic-teal">- ${review.name}</p>
             <p class="mt-1 text-xs text-slate-500">${review.date}</p>
@@ -436,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (currentReviewIndex >= totalSlides - 1) return;
     currentReviewIndex += 1;
     console.log(totalSlides, reviews.length);
-    
+
     updateSliderPosition();
   };
 

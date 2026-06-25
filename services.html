@@ -5,274 +5,407 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Dental Services - Complete dental solutions designed for healthy, beautiful, long-lasting smiles." />
-  <title>Dental Delight | Services</title>
+    content="Dental Services - Complete dental solutions designed for healthy, beautiful, long-lasting smiles."
+    data-i18n="meta.services.description" data-i18n-attr="content" />
+  <title data-i18n="meta.services.title">Dental Delight | Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="assets/js/tailwind.config.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/services.css">
 </head>
 
 <body class="bg-clinic-cream text-slate-800 antialiased font-sans">
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
   <nav class="relative z-20 w-full border-b border-white/15 bg-clinic-cream backdrop-blur">
     <div class="mx-auto flex w-full items-center justify-between px-4 py-2 sm:px-16">
-      <a href="index.html" aria-label="Go to home"
-        class="rounded-lg bg-clinic-cream/90 backdrop-blur transition hover:scale-101">
-
-        <img src="assets/images/logo.png" alt="Dental Delight logo" class="h-14 w-28 object-contain md:h-16 md:w-36">
+      <a href="index.html" class="rounded-lg bg-clinic-cream/90 backdrop-blur transition hover:scale-101">
+        <img src="assets/images/logo.png" alt="Dental Delight logo" data-i18n="nav.logoAlt" data-i18n-attr="alt"
+          class="h-14 w-28 object-contain md:h-16 md:w-36">
       </a>
 
       <button data-menu-toggle type="button"
-        class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden">Menu</button>
+        class="rounded-md border border-clinic-teal px-3 py-2 text-sm font-semibold text-clinic-teal lg:hidden"
+        data-i18n="nav.menu">Menu</button>
 
       <ul class="hidden items-center gap-2 lg:flex">
         <li><a href="index.html"
-            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Home</a>
-        </li>
+            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+            data-i18n="nav.home">Home</a></li>
         <li><a href="about.html"
-            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">About</a>
+            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+            data-i18n="nav.about">About</a></li>
+        <li><a href="services.html" class="rounded-md px-3 py-2 text-lg font-semibold text-clinic-bronze"
+            data-i18n="nav.services">Services</a>
         </li>
-        <li><a href="services.html" class="rounded-md px-3 py-2 text-lg font-semibold text-clinic-bronze">Services</a>
         <li><a href="doctor.html"
-            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Doctor</a>
-        </li>
-        </li>
+            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+            data-i18n="nav.doctor">Doctor</a></li>
         <li><a href="cases.html"
-            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze">Cases</a>
-        </li>
+            class="rounded-md px-3 py-2 text-lg font-semibold text-slate-600 hover:text-clinic-bronze"
+            data-i18n="nav.cases">Cases</a></li>
       </ul>
-      <a href="index.html#contact"
-        class="hidden ml-2 rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex">Book
-        Now</a>
-
+      <div class="hidden items-center gap-2 lg:flex">
+        <a href="index.html#contact"
+          class="rounded-md bg-clinic-bronze px-4 py-2 text-sm font-semibold text-white hover:bg-clinic-gold lg:inline-flex"
+          data-i18n="nav.bookNow">Book Now</a>
+        <button type="button"
+          class="rounded-md border border-clinic-teal px-3 py-2 text-xs font-semibold text-clinic-teal" data-i18n-toggle
+          aria-label="Switch language">AR</button>
+      </div>
     </div>
 
     <div id="mobileMenu" class="hidden border-t border-clinic-mist/40 bg-clinic-cream px-4 py-4 lg:hidden">
       <div class="flex flex-col gap-2">
-        <a href="index.html"
-          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Home</a>
-        <a href="about.html"
-          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">About</a>
-        <a href="services.html"
-          class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal">Services</a>
-        <a href="doctor.html"
-          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Doctor</a>
-        <a href="cases.html"
-          class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30">Cases</a>
+        <a href="index.html" class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+          data-i18n="nav.home">Home</a>
+        <a href="about.html" class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+          data-i18n="nav.about">About</a>
+        <a href="services.html" class="rounded-md bg-clinic-mist/30 px-3 py-2 text-sm font-semibold text-clinic-teal"
+          data-i18n="nav.services">Services</a>
+        <a href="doctor.html" class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+          data-i18n="nav.doctor">Doctor</a>
+        <a href="cases.html" class="rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-clinic-mist/30"
+          data-i18n="nav.cases">Cases</a>
       </div>
     </div>
   </nav>
 
-  <header class="relative overflow-hidden bg-slate-900 py-32 text-white">
-    <div class="absolute inset-0 bg-gradient-to-br from-clinic-bronze/90 to-clinic-gold/80 mix-blend-multiply"></div>
-    <div class="absolute -left-20 top-0 h-96 w-96 -translate-y-1/3 animate-float rounded-full bg-white/20 blur-[100px]"
-      style="animation-delay: 0.5s;"></div>
 
-    <div class="relative mx-auto w-full max-w-6xl px-4 text-center sm:px-6">
-      <p
-        class="mb-4 animate-fade-in inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white backdrop-blur-sm border border-white/20">
-        Comprehensive Care</p>
-      <h1 class="animate-slide-up text-5xl font-extrabold tracking-tight sm:text-6xl" style="animation-delay: 0.1s;">Our
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-clinic-cream">Dental Services</span>
-      </h1>
-      <p class="animate-slide-up mx-auto mt-6 max-w-2xl text-lg text-white/90 leading-relaxed"
-        style="animation-delay: 0.2s;">
-        Advanced treatments with clear plans, transparent outcomes, and patient comfort at the core of everything we do.
-      </p>
-    </div>
-  </header>
+  <!-- ═══════════════════════════════════════════
+       SERVICES SECTION (matches doctor page header style)
+  ═══════════════════════════════════════════ -->
+  <section id="services-section" class="relative px-12 py-16 md:py-24">
 
-  <section class="mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      <article
-        class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20 flex flex-col">
-        <div
-          class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-clinic-teal to-clinic-mist transition-all duration-300 group-hover:h-2 z-10">
+    <!-- Ambient blobs (identical pattern to doctor page) -->
+    <div class="blob blob-1 absolute -top-24 -left-28 h-[420px] w-[420px] rounded-full pointer-events-none blur-sm"
+      style="background:radial-gradient(circle,rgba(13,148,136,0.12) 0%,transparent 68%)"></div>
+    <div class="blob blob-2 absolute -bottom-16 -right-20 h-[300px] w-[300px] rounded-full pointer-events-none blur-sm"
+      style="background:radial-gradient(circle,rgba(13,148,136,0.09) 0%,transparent 68%)"></div>
+    <div class="blob blob-3 absolute top-[40%] left-1/2 h-[180px] w-[180px] rounded-full pointer-events-none blur-sm"
+      style="background:radial-gradient(circle,rgba(181,137,58,0.07) 0%,transparent 68%)"></div>
+
+    <div class="relative mx-auto w-full max-w-6xl px-4 sm:px-6" style="z-index:1;">
+
+      <!-- ── Section Header (exact same pattern as doctor page) ── -->
+      <div class="text-center mb-16">
+
+        <!-- eyebrow: ::before dot lives in services.css -->
+        <span class="section-eyebrow
+                     inline-flex items-center gap-2
+                     rounded-full border border-teal-600/20
+                     bg-teal-600/8 px-4 py-1
+                     text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-teal-600
+                     mb-3" data-i18n="services.header.eyebrow">
+          Comprehensive Care
+        </span>
+
+        <!-- title: clamp() lives in services.css -->
+        <h1 class="section-title
+                   font-['Cormorant_Garamond',serif] font-bold
+                   leading-[1.12] tracking-[-0.02em] text-slate-900 mt-2">
+          <span data-i18n="services.header.titlePrefix">Our Dental</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-clinic-gold to-clinic-gold"
+            data-i18n="services.header.titleEmphasis">Services
+          </span>
+        </h1>
+
+        <!-- title underline: matches doctor page exactly -->
+        <div class="mx-auto my-4 h-[3px] w-14 rounded-sm" style="background:linear-gradient(90deg,#0d9488,#b5893a)">
         </div>
-        <div class="relative h-56 w-full overflow-hidden">
-          <img src="https://picsum.photos/600/400?random=41"
-            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Whitening">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 right-4 text-white">
-            <h3 class="text-2xl font-bold">Teeth Whitening</h3>
-          </div>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <p class="text-slate-600 leading-relaxed">Professional in-clinic whitening with controlled sensitivity
-            protocols for a brighter, more confident smile.</p>
-          <div class="mt-auto pt-6">
-            <div
-              class="inline-flex items-center rounded-lg bg-clinic-bronze/10 px-3 py-1 text-sm font-medium text-clinic-bronze">
-              <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              Quick Results
+
+        <p class="mx-auto max-w-[540px] text-base leading-[1.8] text-slate-500" data-i18n="services.header.desc">
+          Advanced treatments with clear plans, transparent outcomes, and patient comfort at the core of everything we
+          do.
+        </p>
+      </div>
+
+
+      <!-- ── Service Cards Grid ── -->
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+        <!-- CARD 1 – Teeth Whitening -->
+        <article class="service-card
+                        group relative overflow-hidden
+                        rounded-3xl border border-slate-200 bg-white
+                        shadow-sm flex flex-col
+                        transition-all duration-300
+                        hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img src="https://picsum.photos/600/400?random=41"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Teeth Whitening">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-bold" data-i18n="services.card1.title">Teeth
+                Whitening</h3>
             </div>
           </div>
-        </div>
-      </article>
-
-      <article
-        class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20 flex flex-col">
-        <div
-          class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-clinic-teal to-clinic-mist transition-all duration-300 group-hover:h-2 z-10">
-        </div>
-        <div class="relative h-56 w-full overflow-hidden">
-          <img src="https://picsum.photos/600/400?random=42"
-            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Implants">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 right-4 text-white">
-            <h3 class="text-2xl font-bold">Dental Implants</h3>
-          </div>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <p class="text-slate-600 leading-relaxed">Reliable replacement for missing teeth using modern implant systems
-            that restore natural function.</p>
-          <div class="mt-auto pt-6">
-            <div
-              class="inline-flex items-center rounded-lg bg-clinic-bronze/10 px-3 py-1 text-sm font-medium text-clinic-bronze">
-              <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              Long-term Durability
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-slate-600 leading-relaxed" data-i18n="services.card1.desc">Professional in-clinic whitening
+              with controlled sensitivity protocols for a brighter, more confident smile.</p>
+            <div class="mt-auto pt-6">
+              <div
+                class="inline-flex items-center rounded-lg bg-teal-600/10 px-3 py-1 text-sm font-medium text-teal-700">
+                <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span data-i18n="services.card1.badge">Quick Results</span>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article
-        class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20 flex flex-col">
-        <div
-          class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-clinic-teal to-clinic-mist transition-all duration-300 group-hover:h-2 z-10">
-        </div>
-        <div class="relative h-56 w-full overflow-hidden">
-          <img src="https://picsum.photos/600/400?random=43"
-            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-            alt="Orthodontics">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 right-4 text-white">
-            <h3 class="text-2xl font-bold">Orthodontics</h3>
-          </div>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <p class="text-slate-600 leading-relaxed">Braces and aligner therapy for healthier bite and beautifully
-            aligned teeth at any age.</p>
-          <div class="mt-auto pt-6">
-            <div
-              class="inline-flex items-center rounded-lg bg-clinic-bronze/10 px-3 py-1 text-sm font-medium text-clinic-bronze">
-              <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              Improved Aesthetics
+        <!-- CARD 2 – Dental Implants -->
+        <article class="service-card
+                        group relative overflow-hidden
+                        rounded-3xl border border-slate-200 bg-white
+                        shadow-sm flex flex-col
+                        transition-all duration-300
+                        hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img src="https://picsum.photos/600/400?random=42"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Dental Implants">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-bold" data-i18n="services.card2.title">Dental
+                Implants</h3>
             </div>
           </div>
-        </div>
-      </article>
-
-      <article
-        class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20 flex flex-col">
-        <div
-          class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-clinic-teal to-clinic-mist transition-all duration-300 group-hover:h-2 z-10">
-        </div>
-        <div class="relative h-56 w-full overflow-hidden">
-          <img src="https://picsum.photos/600/400?random=44"
-            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Root canal">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 right-4 text-white">
-            <h3 class="text-2xl font-bold">Root Canal Therapy</h3>
-          </div>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <p class="text-slate-600 leading-relaxed">Microscope-assisted treatment to preserve natural teeth and
-            eliminate pain effectively.</p>
-          <div class="mt-auto pt-6">
-            <div
-              class="inline-flex items-center rounded-lg bg-clinic-bronze/10 px-3 py-1 text-sm font-medium text-clinic-bronze">
-              <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              Pain Relief
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-slate-600 leading-relaxed" data-i18n="services.card2.desc">Reliable replacement for missing
+              teeth using modern implant systems that restore natural function.</p>
+            <div class="mt-auto pt-6">
+              <div
+                class="inline-flex items-center rounded-lg bg-teal-600/10 px-3 py-1 text-sm font-medium text-teal-700">
+                <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span data-i18n="services.card2.badge">Long-term Durability</span>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <article
-        class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20 flex flex-col">
-        <div
-          class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-clinic-teal to-clinic-mist transition-all duration-300 group-hover:h-2 z-10">
-        </div>
-        <div class="relative h-56 w-full overflow-hidden">
-          <img src="https://picsum.photos/600/400?random=45"
-            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Pediatric">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 right-4 text-white">
-            <h3 class="text-2xl font-bold">Pediatric Dentistry</h3>
-          </div>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <p class="text-slate-600 leading-relaxed">Preventive and restorative care tailored for children in a gentle,
-            welcoming environment.</p>
-          <div class="mt-auto pt-6">
-            <div
-              class="inline-flex items-center rounded-lg bg-clinic-bronze/10 px-3 py-1 text-sm font-medium text-clinic-bronze">
-              <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              Gentle Approach
+        <!-- CARD 3 – Orthodontics -->
+        <article class="service-card
+                        group relative overflow-hidden
+                        rounded-3xl border border-slate-200 bg-white
+                        shadow-sm flex flex-col
+                        transition-all duration-300
+                        hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img src="https://picsum.photos/600/400?random=43"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Orthodontics">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-bold" data-i18n="services.card3.title">
+                Orthodontics</h3>
             </div>
           </div>
-        </div>
-      </article>
-
-      <article
-        class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20 flex flex-col">
-        <div
-          class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-clinic-teal to-clinic-mist transition-all duration-300 group-hover:h-2 z-10">
-        </div>
-        <div class="relative h-56 w-full overflow-hidden">
-          <img src="https://picsum.photos/600/400?random=46"
-            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Veneers">
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
-          <div class="absolute bottom-4 left-4 right-4 text-white">
-            <h3 class="text-2xl font-bold">Smile Design</h3>
-          </div>
-        </div>
-        <div class="p-6 flex-1 flex flex-col">
-          <p class="text-slate-600 leading-relaxed">Digital smile planning and custom veneers for a balanced,
-            natural-looking esthetic transformation.</p>
-          <div class="mt-auto pt-6">
-            <div
-              class="inline-flex items-center rounded-lg bg-clinic-bronze/10 px-3 py-1 text-sm font-medium text-clinic-bronze">
-              <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clip-rule="evenodd" />
-              </svg>
-              Natural Finish
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-slate-600 leading-relaxed" data-i18n="services.card3.desc">Braces and aligner therapy for
+              healthier bite and beautifully aligned teeth at any age.</p>
+            <div class="mt-auto pt-6">
+              <div
+                class="inline-flex items-center rounded-lg bg-teal-600/10 px-3 py-1 text-sm font-medium text-teal-700">
+                <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span data-i18n="services.card3.badge">Improved Aesthetics</span>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
-    </div>
+        </article>
+
+        <!-- CARD 4 – Root Canal Therapy -->
+        <article class="service-card
+                        group relative overflow-hidden
+                        rounded-3xl border border-slate-200 bg-white
+                        shadow-sm flex flex-col
+                        transition-all duration-300
+                        hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img src="https://picsum.photos/600/400?random=44"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Root Canal Therapy">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-bold" data-i18n="services.card4.title">Root
+                Canal Therapy</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-slate-600 leading-relaxed" data-i18n="services.card4.desc">Microscope-assisted treatment to
+              preserve natural teeth and eliminate pain effectively.</p>
+            <div class="mt-auto pt-6">
+              <div
+                class="inline-flex items-center rounded-lg bg-teal-600/10 px-3 py-1 text-sm font-medium text-teal-700">
+                <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span data-i18n="services.card4.badge">Pain Relief</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 5 – Pediatric Dentistry -->
+        <article class="service-card
+                        group relative overflow-hidden
+                        rounded-3xl border border-slate-200 bg-white
+                        shadow-sm flex flex-col
+                        transition-all duration-300
+                        hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img src="https://picsum.photos/600/400?random=45"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Pediatric Dentistry">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-bold" data-i18n="services.card5.title">
+                Pediatric Dentistry</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-slate-600 leading-relaxed" data-i18n="services.card5.desc">Preventive and restorative care
+              tailored for children in a gentle, welcoming environment.</p>
+            <div class="mt-auto pt-6">
+              <div
+                class="inline-flex items-center rounded-lg bg-teal-600/10 px-3 py-1 text-sm font-medium text-teal-700">
+                <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span data-i18n="services.card5.badge">Gentle Approach</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6 – Smile Design -->
+        <article class="service-card
+                        group relative overflow-hidden
+                        rounded-3xl border border-slate-200 bg-white
+                        shadow-sm flex flex-col
+                        transition-all duration-300
+                        hover:-translate-y-2 hover:shadow-xl hover:shadow-clinic-mist/20">
+          <div class="relative h-56 w-full overflow-hidden">
+            <img src="https://picsum.photos/600/400?random=46"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              alt="Smile Design">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <h3 class="font-['Cormorant_Garamond',serif] text-2xl font-bold" data-i18n="services.card6.title">Smile
+                Design</h3>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <p class="text-slate-600 leading-relaxed" data-i18n="services.card6.desc">Digital smile planning and custom
+              veneers for a balanced, natural-looking esthetic transformation.</p>
+            <div class="mt-auto pt-6">
+              <div
+                class="inline-flex items-center rounded-lg bg-teal-600/10 px-3 py-1 text-sm font-medium text-teal-700">
+                <svg class="mr-1.5 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span data-i18n="services.card6.badge">Natural Finish</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /grid -->
+    </div><!-- /container -->
   </section>
 
-  <footer class="bg-slate-900 py-10 border-t-4 border-clinic-teal">
-    <div class="mx-auto w-full max-w-6xl px-4 text-center">
-      <p class="text-sm text-slate-400">© 2026 Dental Delight. All rights reserved.</p>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="bg-clinic-teal py-10 text-clinic-cream">
+    <div class="mx-auto grid w-full max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-3">
+      <div>
+        <h4 class="text-lg font-bold" data-i18n="footer.brand">Dental Delight</h4>
+        <p class="mt-2 text-sm text-clinic-cream/80" data-i18n="footer.tagline">Modern dental care with a premium
+          patient
+          experience.</p>
+      </div>
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wide" data-i18n="footer.links">Quick Links</h5>
+        <div class="mt-2 space-y-1 text-sm text-clinic-cream/80"><a href="about.html" class="block hover:text-white"
+            data-i18n="nav.about">About</a><a href="services.html" class="block hover:text-white"
+            data-i18n="nav.services">Services</a><a href="doctor.html" class="block hover:text-white"
+            data-i18n="nav.doctor">Doctor</a><a href="cases.html" class="block hover:text-white"
+            data-i18n="nav.cases">Cases</a>
+        </div>
+      </div>
+      <div>
+        <h5 class="text-sm font-bold uppercase tracking-wide" data-i18n="footer.contact">Contact Us</h5>
+        <div class="mt-4 flex items-center gap-3">
+          <a href="https://www.facebook.com/Dntl.Delight" target="_blank" rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
+            aria-label="Dental Delight on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
+              <path
+                d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.9 3.78-3.9 1.1 0 2.25.2 2.25.2v2.47h-1.27c-1.25 0-1.64.78-1.64 1.57V12h2.8l-.45 2.89h-2.35v6.99A10 10 0 0 0 22 12Z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/dental.delight.center?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank" rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
+            aria-label="Dental Delight on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
+              <path
+                d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm4.5-3.2a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z" />
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@dental.delight.center?is_from_webapp=1&sender_device=pc" target="_blank"
+            rel="noopener noreferrer"
+            class="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 text-clinic-cream/90 transition hover:bg-white hover:text-clinic-teal"
+            aria-label="Dental Delight on TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="h-5 w-5">
+              <path
+                d="M15.5 3c.4 1.6 1.6 2.9 3.2 3.4V9c-1.6-.1-3.1-.6-4.4-1.5v7.2a4.8 4.8 0 1 1-4.8-4.8c.4 0 .8 0 1.2.1v2.7c-.3-.1-.6-.2-.9-.2a2.2 2.2 0 1 0 2.2 2.2V3h3.5Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
+    <p class="mt-8 text-center text-xs text-clinic-cream/70" data-i18n="footer.rights">© 2026 Eng.Mohanad Khaled. All
+      rights reserved.</p>
   </footer>
+
+  <!-- WhatsApp FAB -->
+  <a class="fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition hover:scale-110"
+    href="https://wa.me/201093382358?text=Hello" target="_blank" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+      <path fill="#25D366"
+        d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.4 2 7.7L0 32l8.5-2.2c2.2 1.2 4.7 1.9 7.5 1.9 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4z" />
+      <path fill="#FFF"
+        d="M24.3 19.6c-.4-.2-2.3-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.4-.2.2-.5.3-.9.1-.4-.2-1.7-.6-3.2-1.9-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.2-.4.3-.6.1-.2 0-.5-.1-.7-.1-.2-.9-2.2-1.3-3-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .4-.3.3-1.3 1.3-1.3 3.2 0 1.9 1.4 3.7 1.6 3.9.2.3 2.8 4.3 6.9 6 .9.4 1.6.6 2.2.7.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.7.3-.8.3-1.5.2-1.7-.1-.2-.4-.3-.8-.5z" />
+    </svg>
+  </a>
+
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/services.js"></script>
 </body>
 

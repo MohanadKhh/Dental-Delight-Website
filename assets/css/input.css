@@ -9,3 +9,9 @@
   --color-clinic-mist: #8DB1B0;
   --font-sans: "Inter", sans-serif;
 }
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

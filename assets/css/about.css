@@ -1,0 +1,58 @@
+/* ─── TOKENS ─────────────────────────────── */
+:root {
+    --teal: #0d9488;
+    --teal-dark: #0f766e;
+    --gold: #b5893a;
+    --slate: #0f172a;
+    --slate-muted: #64748b;
+    --surface: #f8fafc;
+    --shadow-soft: 0 8px 32px rgba(13,148,136,0.10), 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ─── SECTION BACKGROUND (multi-layer radial + grid overlay) ── */
+#about-section {
+    background:
+        radial-gradient(ellipse 70% 50% at 10% 20%, rgba(13,148,136,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 90% 80%, rgba(13,148,136,0.05) 0%, transparent 55%),
+        linear-gradient(160deg, #f8fafc 0%, #f0fdfa 50%, #f8fafc 100%);
+    overflow: visible;
+}
+
+#about-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(13,148,136,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(13,148,136,0.035) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ─── BLOB ANIMATIONS ────────────────────── */
+@keyframes blobDrift {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33%      { transform: translate(12px,-20px) scale(1.05); }
+    66%      { transform: translate(-8px,10px) scale(0.97); }
+}
+
+.blob-1 { animation: blobDrift 9s ease-in-out infinite; }
+.blob-2 { animation: blobDrift 7s ease-in-out infinite reverse 1s; }
+.blob-3 { animation: blobDrift 11s ease-in-out infinite 2s; }
+
+/* ─── SECTION TITLE CLAMP ────────────────── */
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+/* ─── SECTION EYEBROW DOT (::before pseudo) ─ */
+.section-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: inline-block;
+    flex-shrink: 0;
+}
