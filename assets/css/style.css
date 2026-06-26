@@ -20,10 +20,12 @@
     --color-slate-700: oklch(37.2% 0.044 257.287);
     --color-slate-800: oklch(27.9% 0.041 260.031);
     --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-slate-950: oklch(12.9% 0.042 264.695);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-sm: 24rem;
+    --container-md: 28rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
     --container-5xl: 64rem;
@@ -64,6 +66,7 @@
     --radius-3xl: 1.5rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --blur-sm: 8px;
+    --blur-md: 12px;
     --blur-xl: 24px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -479,9 +482,6 @@
   }
   .h-\[26px\] {
     height: 26px;
-  }
-  .h-\[32rem\] {
-    height: 32rem;
   }
   .h-\[45\%\] {
     height: 45%;
@@ -1847,6 +1847,11 @@
   .lg\:inline-flex {
     @media (width >= 64rem) {
       display: inline-flex;
+    }
+  }
+  .lg\:h-\[32rem\] {
+    @media (width >= 64rem) {
+      height: 32rem;
     }
   }
   .lg\:w-5\/12 {
